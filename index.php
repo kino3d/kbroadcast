@@ -64,7 +64,7 @@
 <input type="radio" id="check2" name="radio" /><label for="check2">Media</label>
 <input type="radio" id="check3" name="radio" /><label for="check3">Bassa</label>
 </div>
-<button id="stream" style="float:right"></button>
+<button id="stream" style="float:right;height:50px;"></button>
 </form>
 </div>
 <div id="toolbar" class="ui-widget-header" style="width:410px;">

@@ -117,7 +117,7 @@ $( "#record" ).button({
 text: true,
 label:"Registra",
 icons: {
-primary: "ui-icon-bullet"
+primary: "ui-icon-bullet red ui-corner-all"
 }
 }).css("width", "90px","background","red!important", "color","red")
 .click(function() {

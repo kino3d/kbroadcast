@@ -98,6 +98,10 @@ background-color: red !important;
 color:black!important;
 }
 
+#red{
+background-color: red !important;
+color:black!important;
+}
 .rows {
 	list-style-type: none;
 	border-bottom: 1px solid #dfdfdf;
