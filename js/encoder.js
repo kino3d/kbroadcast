@@ -171,18 +171,18 @@ $( this ).button( "option", options ).toggleClass("red");
 // Stream Button
 $( "#stream" ).button({
 label:"Stream",
-text:true,
-icons: {
-primary: "ui-icon-stop"
-}
+text:true //,
+// icons: {
+// primary: "ui-icon-stop"
+// }
 })
 .click(function() {
 $( "#stream" ).button( "option", {
 label: "Stream",
-text:true,
-icons: {
-primary: "ui-icon-bullet"
-}
+text:true //,
+// icons: {
+// primary: "ui-icon-bullet"
+// }
 }).addClass("red");
 });
 

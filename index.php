@@ -49,7 +49,8 @@
             <li><a href="#tabs-1">Encoder</a>
             <li><a href="#tabs-2">Player</a>
             <li><a href="#tabs-3">Registrazioni</a>
-            <li><a href="#tabs-4">Aiuto</a>
+            <li><a href="#tabs-4">System</a>
+            <li><a href="#tabs-5">?</a>
  	</ul>
 <div id="tabs-1">
 <div class="src_stats ui-corner-all" id="str_status">&nbsp;</div>
@@ -64,7 +65,7 @@
 <input type="radio" id="check2" name="radio" /><label for="check2">Media</label>
 <input type="radio" id="check3" name="radio" /><label for="check3">Bassa</label>
 </div>
-<button id="stream" style="float:right;height:50px;"></button>
+<button id="stream" style="float:right;height:50px;background-color:#28E02E;color:#fff"></button>
 </form>
 </div>
 <div id="toolbar" class="ui-widget-header" style="width:410px;">
@@ -118,7 +119,11 @@ Player embed
 
 </div>
 <div id="tabs-4">
-Aiuto
+System
+
+</div>
+<div id="tabs-5">
+Help
 
 </div>
  </div> <!-- /tabs -->
