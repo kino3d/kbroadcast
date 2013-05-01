@@ -24,6 +24,7 @@
 	<script src="js/jquery-ui-1.10.2.custom.js"></script>
 	<script src="js/encoder.js"></script>
 	<link href="css/kino-theme/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
+	<link href="css/encoder.css" rel="stylesheet" />
 	<!-- <link rel="stylesheet" type="text/css" href="css/flat/jquery.mobile.flatui.css" /> -->
 	<script type='text/javascript' src='https://eventilive.top-ix.org/player/jw/jwplayer.js'></script>
 
