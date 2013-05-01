@@ -1,7 +1,7 @@
 
       body {
         padding-top: 0px; /* 60px to make the container go all the way to the bottom of the topbar */
-        font: 62.5% "Trebuchet MS", sans-serif;
+        font: 55.0% "Trebuchet MS", sans-serif;
 		margin: 5px;
 		-webkit-text-size-adjust: none;
       }
@@ -119,6 +119,7 @@ overflow:scroll;
 width: 400px;
 overflow-x: hidden;
 border:1px dotted #afafaf;
+background-color: #fff;
 	}
 	
 .src_stats{

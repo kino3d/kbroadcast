@@ -55,18 +55,19 @@
 <div class="src_stats ui-corner-all" id="str_status">&nbsp;</div>
 <div id='mediaspace' name='mediaspace'></div>
 <hr>
+<label>Broadcast</label><br>
 <div id="toolbar" class="ui-widget-header" style="width:410px;">
-<label>Broadcast</label><br />
-<label>Qualita</label>
 <form >
 <div id="radio">
+<label>Qualita: </label>
 <input type="radio" id="check1" name="radio" checked="checked" /><label for="check1">Alta</label>
 <input type="radio" id="check2" name="radio" /><label for="check2">Media</label>
 <input type="radio" id="check3" name="radio" /><label for="check3">Bassa</label>
 </div>
 <button id="stream" style="float:right"></button>
 </form>
-<br />
+</div>
+<div id="toolbar" class="ui-widget-header" style="width:410px;">
 <button id="record"></button>
 <button id="timer"></button>
 </div>
