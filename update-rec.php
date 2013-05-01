@@ -6,10 +6,10 @@ exec('ls -sht /var/www/encoder/recording/' ,$resultlist );
 
 foreach ($resultlist as $fileName)
 {
- if (strtolower(substr($fileName, -4)) == '.flv') {
+ if (strtolower(substr($fileName, -4)) == '.flv' or strtolower(substr($fileName, -3)) == '') {
      echo "<li id=\"video-$i\" class=\"rows\"><span class=\"ui-icon ui-icon-video\" style=\"display: inline-block;vertical-align: text-bottom;margin-right:4px;font-size:10px;\"></span><a href=# class=\"fzilectrl\">$fileName</a> <a href=# class=\"filectrl\"><span class=\"ui-icon ui-icon-trash\"></span></a></li>";
     $i++;
-    //}
+    }
 };
 
 ?>

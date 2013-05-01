@@ -261,8 +261,7 @@ $.ajax({
  type: "GET",
   url: "http://192.168.1.7/on_publish",
   dataType: "jsonp",
- 
-  contentType: "application/json; charset=utf-8",
+ contentType: "application/json; charset=utf-8",
 //  data: data,
   success: function() {
 	$("#str_status").addClass("src_stats").css("background-color","green").text("Source on");    
