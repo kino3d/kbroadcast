@@ -17,9 +17,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="ico/favicon.png">
-
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="ico/favicon.png" />
 	<script src="js/jquery-1.9.1.js"></script>
 	<script src="js/jquery-ui-1.10.2.custom.js"></script>
 	<script src="js/encoder.js"></script>
@@ -53,11 +52,12 @@
             <li><a href="#tabs-5">?</a>
  	</ul>
 <div id="tabs-1">
-<div class="src_stats ui-corner-all" id="str_status">&nbsp;</div>
+<div class="ui-widget-content ui-corner-all"  style="width:414px;"><div class="src_stats ui-corner-all ui-state-error" id="str_status">&nbsp;</div></div>
+<div class="pad-small"></div>
 <div id='mediaspace' name='mediaspace'></div>
-<hr>
-<label>Broadcast</label><br>
-<div id="toolbar" class="ui-widget-header" style="width:410px;">
+<div class="pad-small"></div>
+<label class="">Broadcast</label><br>
+<div id="toolbar" class="ui-widget-header ui-corner-all" style="width:410px;">
 <form >
 <div id="radio">
 <label>Qualita: </label>

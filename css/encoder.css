@@ -153,4 +153,17 @@ background-color: #fff;
 #radio{
 	display: inline-table;	
 	}	
-                               
+ 
+ .pad-small{
+line-height: 0px;
+border:0px;
+margin: 0px;
+padding: 0px;
+ font-size: 1px;
+ height: 3px;
+ 	}
+ 	
+ 	                      
+ 	                      
+ 	                      
+ 	                      
