@@ -6,3 +6,7 @@ gst-launch -p -v dvbsrc do-timestamp=true bandwidth=8 code-rate-lp=AUTO code-rat
 
 # /dev/video0 working to optimize
 gst-launch-0.10 v4l2src do-timestamp=true device=/dev/video0 ! ffmpegcolorspace ! queue ! x264enc pass=pass1 threads=0 bitrate=1536 tune=zerolatency speed-preset=fast profile=baseline subme=6 bframes=0 ! queue ! flvmux name=mux  alsasrc device-name="hw:CARD=Intel,DEV=2" ! queue ! progressreport name=progress update-freq=1 ! audioconvert ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw,framerate=25/1 ! queue ! mux. mux. ! queue ! rtmpsink location='rtmp://localhost/myapp/stream'
+
+# /dev/video optimized 
+
+gst-launch v4l2src do-timestamp=true device=/dev/video0 ! ffmpegcolorspace ! queue ! x264enc pass=cbr threads=0 bitrate=1836 tune=zerolatency speed-preset=fast profile=baseline key-int-max=5 ! queue leaky=1 ! flvmux name=mux alsasrc device-name="hw:CARD=Intel,DEV=2" ! queue ! progressreport name=progress update-freq=1 ! audioconvert ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw ! queue ! mux. mux. ! queue ! rtmpsink location='rtmp://192.168.1.7/myapp/stream?test=1' sync=true
