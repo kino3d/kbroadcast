@@ -48,24 +48,32 @@
             <li><a href="#tabs-1">Encoder</a>
             <li><a href="#tabs-2">Player</a>
             <li><a href="#tabs-3">Registrazioni</a>
-            <li><a href="#tabs-4">System</a>
+            <li><a href="#tabs-4">Sistema</a>
             <li><a href="#tabs-5">?</a>
  	</ul>
 <div id="tabs-1">
-<div class="ui-widget-content ui-corner-all"  style="width:414px;"><div class="src_stats ui-corner-all ui-state-error" id="str_status">&nbsp;</div></div>
+
+<div class="ui-widget-content ui-corner-all"  style="border-color:#efefef;width:414px;padding:0px!important;"><div class="src_stats ui-corner-all ui-state-error" id="str_status">&nbsp;</div></div>
 <div class="pad-small"></div>
 <div id='mediaspace' name='mediaspace'></div>
 <div class="pad-small"></div>
 <label class="">Broadcast</label><br>
 <div id="toolbar" class="ui-widget-header ui-corner-all" style="width:410px;">
 <form >
-<div id="radio">
-<label>Qualita: </label>
+<div id="radio" style="float:left;">
+<div style="width:40px;padding:5px;margin:auto;display:inline-table">Video:</div> 
 <input type="radio" id="check1" name="radio" checked="checked" /><label for="check1">Alta</label>
 <input type="radio" id="check2" name="radio" /><label for="check2">Media</label>
 <input type="radio" id="check3" name="radio" /><label for="check3">Bassa</label>
+</form>
+<div class="pad-small"></div>
+<form >
+<div style="width:40px;padding:5px;margin:auto;display:inline-table">Audio:</div>
+<input type="radio" id="check4" name="radio" checked="checked" /><label for="check4">Alta</label>
+<input type="radio" id="check5" name="radio" /><label for="check5">Media</label>
+<input type="radio" id="check6" name="radio" /><label for="check6">Bassa</label>
 </div>
-<button id="stream" style="float:right;height:50px;background-color:#28E02E;color:#fff"></button>
+<button id="stream" style="float:right;height:58px;font-weight:bold;background-color:#28E02E;color:#fff"></button>
 </form>
 </div>
 <div id="toolbar" class="ui-widget-header" style="width:410px;">
@@ -119,8 +127,21 @@ Player embed
 
 </div>
 <div id="tabs-4">
-System
 
+<div id="accordian" style="width:412px;">
+<h3><a href="#"  style="font-weight:bold;vertical-align:top">Info Sistema</a></h3>
+<div>
+<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+</div>
+ <h3><a href="#" style="font-weight:bold;vertical-align:top">Rete</a></h3>
+<div>
+<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+</div>
+ <h3><a href="#" style="font-weight:bold;vertical-align:top">CDN</a></h3>
+<div>
+<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+</div>
+</div>
 </div>
 <div id="tabs-5">
 Help

@@ -858,7 +858,7 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-active {
 	border: 1px solid #aaaaaa;
 //	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
-	background-color:#F1F6F7;
+	background-color:#FBFBFB;
 	font-weight: normal;
 	color: #212121;
 }
@@ -1143,25 +1143,25 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-	border-top-left-radius: 3px;
+	border-top-left-radius: 0px;
 }
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-	border-top-right-radius: 3px;
+	border-top-right-radius: 0px;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-	border-bottom-left-radius: 3px;
+	border-bottom-left-radius: 0px;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: 0px;
 }
 
 /* Overlays */
