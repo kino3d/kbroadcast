@@ -310,18 +310,18 @@ setInterval(function(){
 $.ajax({
  type: "GET",
   url: "http://192.168.1.7/on_publish",
-  dataType: "jsonp",
+  dataType: "script",
 // contentType: "application/json; charset=utf-8",
 //  data: data,
-  success: function() {
+  success: function(data) {
 	$("#str_status").addClass("src_stats").css("background-color","green").text("Source on");    
 	//jwplayer().play();   
     //alert("success");
-  console.log();
+  console.log(data);
   },
   error: function() {
  //   alert("error");
-    $("#str_status").addClass("src_stats").css("background-color","red").text("Source off"); 
+    $("#str_status").addClass("src_stats ui-state-error").css("background-color","red").text("Source off"); 
     console.log();  
   }
 });

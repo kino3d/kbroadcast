@@ -53,12 +53,18 @@
  	</ul>
 <div id="tabs-1">
 
-<div class="ui-widget-content ui-corner-all"  style="border-color:#efefef;width:414px;padding:0px!important;"><div class="src_stats ui-corner-all ui-state-error" id="str_status">&nbsp;</div></div>
+<div class="ui-widget-content ui-corner-all"  style="border-color:#efefef;width:414px;padding:0px!important;"><div style="float:left;margin:0px;padding:2px;margin-right:5px;" class="src_stats ui-corner-all" id="str_status">&nbsp;</div>
+<select id="select" >
+<option>Video test</option>
+<option>Video test</option>
+<option>Video test</option>
+</select>
+</div>
 <div class="pad-small"></div>
 <div id='mediaspace' name='mediaspace'></div>
 <div class="pad-small"></div>
 <label class="">Broadcast</label><br>
-<div id="toolbar" class="ui-widget-header ui-corner-all" style="width:410px;">
+<div id="toolbar" class="ui-widget-header ui-corner-all" style="width:409px;">
 <form >
 <div id="radio" style="float:left;">
 <div style="width:40px;padding:5px;margin:auto;display:inline-table">Video:</div> 
@@ -99,7 +105,7 @@
          'provider':'rtmp',
         'streamer':'rtmp://192.168.1.7/myapp/',
         'autostart': 'true',
-        'stretching': 'exactfit',
+        'stretching': 'scale',
         'controlbar': 'over',
         'backgroundcolor': '000000',
         'width': '416',
