@@ -1,0 +1,20 @@
+ ffmpeg -re -i udp://192.168.1.7:1234 -vcodec libx264 -vprofile baseline -preset medium -level 3.0 -r 25 -crf 30 -g 5 -ar 44100 -ab 92k -s 704x576 -acodec libfaac -ac 2 -f flv rtmp://localhost/myapp/mystream
+
+ gst-launch filesrc location=big_buck_bunny_720p_stereo.ogg ! decodebin name=demux ! queue ! videorate ! videoscale method=0 ! video/x-raw-yuv,width=852,height=480,framerate=\(fraction\)24/1 ! ffmpegcolorspace ! x264enc pass=pass1 threads=0 bitrate=900 tune=zerolatency ! flvmux name=mux ! rtmpsink location='rtmp://localhost/myapp/mystream' demux. ! queue ! progressreport ! audioconvert ! audiorate ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw ! mux.
+
+gst-launch -v dvbsrc do-timestamp=true bandwidth=8 code-rate-lp=AUTO code-rate-hp=1/2 guard=4  hierarchy=AUTO  modulation="AUTO" trans-mode=AUTO inversion="AUTO" frequency=514000000 ! tsdemux name=demux program-number=8583 ! queue max-size-buffers=0 max-size-time=0 ! mpeg2dec ! ffmpegcolorspace ! videorate ! deinterlace method=greedyl ! xvimagesink sync=false async=false demux. ! queue max-size-buffers=0 max-size-time=0 ! mad ! alsasink sync=false async=true
+
+
+#### RTMP Funziona
+
+gst-launch -v dvbsrc do-timestamp=true bandwidth=8 code-rate-lp=AUTO code-rate-hp=1/2 guard=4  hierarchy=AUTO  modulation="AUTO" trans-mode=AUTO inversion="AUTO" frequency=514000000 ! tsdemux name=demux program-number=8583 ! queue ! decodebin ! queue max-size-buffers=0 max-size-time=0 ! deinterlace method=greedyl ! ffmpegcolorspace ! x264enc pass=pass1 threads=0 bitrate=900 tune=zerolatency ! queue max-size-buffers=0 max-size-time=0 ! flvmux name=mux ! rtmpsink location='rtmp://localhost/myapp/mystream' demux. ! queue max-size-buffers=0 max-size-time=0 ! mad ! progressreport ! audioconvert ! audiorate ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw ! mux.
+
+# rtmp webcam
+gst-launch-0.10 v4l2src ! 'video/x-raw-yuv,width=1280,height=720' ! ffmpegcolorspace ! queue ! x264enc threads=0 bitrate=1336 tune=zerolatency speed-preset=fast ! queue ! flvmux name=mux  pulsesrc ! queue max-size-time=0 max-size-buffers=0 leaky=0 ! progressreport name=progress update-freq=1 ! audioconvert ! lame ! audio/mpeg ! queue ! mux. mux. ! queue ! rtmpsink location='rtmp://localhost/myapp/mystream'
+
+
+# rtmp /dev/video0
+gst-launch-0.10 v4l2src device=/dev/video0 ! ffmpegcolorspace ! queue ! x264enc pass=pass1 threads=0 bitrate=1336 tune=zerolatency speed-preset=medium profile=baseline subme=10 ! queue ! flvmux name=mux  alsasrc device=hw:2 ! queue leaky=1 ! progressreport name=progress update-freq=1 ! audioconvert ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw ! queue ! mux. mux. ! queue ! rtmpsink location='rtmp://localhost/myapp/stream'
+
+
+ gst-launch filesrc location=tears_of_steel_1080p.mov do-timestamp=true ! decodebin name=demux ! queue ! videorate ! videoscale method=0 ! video/x-raw-yuv,width=720,height=404,framerate=\(fraction\)25/1 ! ffmpegcolorspace ! x264enc threads=0 bitrate=1200 tune=zerolatency profile=baseline ! flvmux name=mux ! rtmpsink location='rtmp://192.168.1.7/myapp/stream' demux. ! queue ! progressreport update-freq=1 ! audioconvert ! audiorate ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw ! mux.
