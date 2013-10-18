@@ -3,7 +3,7 @@
 #Network stuff
 $hostname = gethostbyaddr($_SERVER['SERVER_ADDR']);
 // echo $hostname;
-
+/*
 if(sizeof($ffmpeg_output) == null ) {
         
         return null;
@@ -41,9 +41,9 @@ if(sizeof($ffmpeg_output) == null ) {
                                 'bit_rate'  => $bit_rate
                                 );
         return  $resultset;
-                        }
+                     //   }
 
-
+*/
 
 
 ?>
