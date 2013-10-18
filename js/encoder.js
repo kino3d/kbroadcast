@@ -65,7 +65,7 @@
 		// Link to open the dialog
 		$( "#dialog-link" ).click(function( event ) {
 			$( "#dialog" ).dialog( "open" );
-			event.preventDefault();
+		//	event.preventDefault();
 		});
 		
 
@@ -103,7 +103,7 @@ $(function() {
 $( "input[type=submit], button" )
 .button()
 .click(function( event ) {
-event.preventDefault();
+// event.preventDefault();
 });
 });
 
@@ -119,7 +119,7 @@ label:"Registra",
 icons: {
 primary: "ui-icon-bullet red ui-corner-all"
 }
-}).css("width", "90px","background","red!important", "color","red")
+}).css("width", "90px","background","red!important", "color","green")
 .click(function() {
 var options;
 if ( $( this ).text() === "Registra" ) {
@@ -131,7 +131,7 @@ primary: "ui-icon-stop"
 };
 $.ajax({
   type: "GET",
-  url: "http://localhost/control/record/start?app=myapp&name=stream&rec=rec1",
+  url: "/control/record/start?app=myapp&name=stream&rec=rec1",
   dataType: "script",
   success: function() {
 	$("#str_status").css("background-color","green");    
@@ -152,7 +152,7 @@ primary: "ui-icon-bullet"
 };
 $.ajax({
   type: "GET",
-  url: "http://localhost/control/record/stop?app=myapp&name=stream&rec=rec1",
+  url: "/control/record/stop?app=myapp&name=stream&rec=rec1",
   dataType: "script",
   success: function() {
 	$("#str_status").css("background-color","green");    
@@ -221,9 +221,17 @@ $("#tabs").tabs("load",3);
  $("#filem").scroll();
  
 $( "#check" ).button();
+$( "#checks" ).button();
+// $( "select" ).selectmenu();
+
 $( "#format" ).buttonset();
- $( "#radio" ).buttonset();
- 
+$( "#radio" ).buttonset();
+$( "#radio1" ).buttonset();
+
+
+
+
+
 // $( "#accordion" ).accordion({
 //collapsible: true,
 // active:false
@@ -309,24 +317,36 @@ $.ajax({
 setInterval(function(){
 $.ajax({
  type: "GET",
-  url: "http://192.168.1.7/on_publish",
-  dataType: "script",
+  url: "capture.php",
+ dataType: "html",
 // contentType: "application/json; charset=utf-8",
 //  data: data,
   success: function(data) {
-	$("#str_status").addClass("src_stats").css("background-color","green").text("Source on");    
+  	if (data === "stopped") {
+	$("#str_status").addClass("").css("background-color","green", "color","white!important").val("Start");}
+	else
+	{  $("#str_status").addClass("").css("background-color","red").val("Stop");  }
 	//jwplayer().play();   
     //alert("success");
-  console.log(data);
+	console.log(data);
   },
   error: function() {
  //   alert("error");
-    $("#str_status").addClass("src_stats ui-state-error").css("background-color","red").text("Source off"); 
+    $("#str_status").addClass("").css("background-color","red").val("Off"); 
     console.log();  
   }
 });
-},5000);
+},3000);
 
 
 
+$.ajax({
+  type: "GET",
+  url: "network.php",
+  dataType: "json",
+  success: function(data) {
+	$("#dhcp").html(data);  
+ //	alert(resultlist);
+ // 	console.log(data)
+	}});
 

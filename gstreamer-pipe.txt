@@ -18,3 +18,19 @@ gst-launch-0.10 v4l2src device=/dev/video0 ! ffmpegcolorspace ! queue ! x264enc 
 
 
  gst-launch filesrc location=tears_of_steel_1080p.mov do-timestamp=true ! decodebin name=demux ! queue ! videorate ! videoscale method=0 ! video/x-raw-yuv,width=720,height=404,framerate=\(fraction\)25/1 ! ffmpegcolorspace ! x264enc threads=0 bitrate=1200 tune=zerolatency profile=baseline ! flvmux name=mux ! rtmpsink location='rtmp://192.168.1.7/myapp/stream' demux. ! queue ! progressreport update-freq=1 ! audioconvert ! audiorate ! audioresample ! faac bitrate=96000 ! audio/mpeg,mpegversion=4,stream-format=raw ! mux.
+
+
+# MiniRecorder BlackMagick
+bmdcapture -m 10 -V 3 -A 2 -F nut -f pipe:1 | avconv -re -i - -c:v libx264 -profile:v baseline -preset medium -level 30 -aspect 16:9 -s 1280x720 -vb 3500K -r 25 -g 48 -crf 10 -keyint_min 48 -sc_threshold 0 -c:a libvo_aacenc -ab 48k -ar 48000 -ac 2 -tune zerolatency -f flv "rtmp://localhost:1935/myapp/stream"
+
+gst-launch-0.10 -v -m decklinksrc mode=10 connection=1 subdevice=0 audio-input=1 ! ffmpegcolorspace ! queue ! x264enc pass=pass1 threads=0 bitrate=1336 tune=zerolatency speed-preset=medium profile=baseline subme=10 ! queue ! flvmux ! queue ! rtmpsink location='rtmp://localhost/myapp/stream'
+
+ gst-launch-0.10 -v -m decklinksrc mode=10 connection=1 subdevice=0 audio-input=1 ! queue ! videorate ! videoscale method=0 ! video/x-raw-yuv,width=960,height=540,framerate=\(fraction\)25/1 ! ffmpegcolorspace ! queue ! x264enc threads=0 bitrate=1000 tune=zerolatency speed-preset=medium profile=baseline subme=10 ! queue ! flvmux ! progressreport update-freq=1 ! queue ! rtmpsink location='rtmp://localhost/myapp/stream'
+ 
+
+gst-launch-0.10 decklinksrc mode=10 connection=1 subdevice=0 audio-input=1 ! queue max-size-buffers=0 max-size-time=0 ! deinterlace method=1 ! videorate ! videoscale ! video/x-raw-yuv,width=960,height=540,framerate=\(fraction\)25/1 ! ffmpegcolorspace ! queue ! x264enc threads=0 bitrate=2048 tune=zerolatency speed-preset=fast profile=baseline pass=pass1 ! queue ! flvmux ! progressreport name=time  update-freq=1 qos=true ! queue ! rtmpsink location='rtmp://192.168.1.2/myapp/stream'
+
+bmdcapture -m 4 -V 3 -A 2 -F nut -f pipe:1 | avconv -re -i - -c:v libx264 -profile:v baseline -preset faster -level 30 -tune zerolatency -aspect 16:9 -s 720x404 -b:v 1500 -r 25 -g 48 -crf 20 -maxrate:v 1800K -minrate:v 800K -bufsize 600k -keyint_min 48 -sc_threshold 0 -c:a libvo_aacenc -ab 64k -ar 48000 -ac 2 -threads 1 -f flv "rtmp://192.168.1.2:1935/myapp/stream"
+
+ bmdcapture -m 4 -V 3 -A 2 -F nut -f pipe:1 | avconv -re -i - -c:v libx264 -profile:v baseline -preset faster -level 30 -aspect 16:9 -s 720x404 -b:v 1500k -r 25 -g 48 -maxrate:v 1800k -minrate:v 800k -bufsize 1000k -keyint_min 48 -sc_threshold 0 -c:a libvo_aacenc -ab 64k -ar 48000 -ac 2 -threads 1 -tune zerolatency -f flv "rtmp://192.168.1.2:1935/myapp/stream"
+ 
