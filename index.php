@@ -222,14 +222,23 @@ Player embed
 </div>
 <h3><a href="#" style="font-weight:bold;vertical-align:top">Rete</a></h3>
 <div>
-<label>DHCP</label>
-<form>
-<label>IP</label><input type="text" value="IP">
-<label>Boadcast</label><input type="text" value="Boadcast">
-<label>Netmask</label><input type="text" value="Netmask">
-<label>DNS</label><input type="text" value="DNS">
+<input type="checkbox" id="checkbox1" name="checkbox" /><label for="checkbox1"><strong>DHCP</strong></label>
+<div id="dhcp" class="ui-corner-all">
+<form id="p5p1">
+<input type="text" id="0ip" class="ui-corner-all" value="IP">
+<input type="text" id="0broadcast" class="ui-corner-all" value="Boadcast">
+<input type="text" id="0netmask" class="ui-corner-all" value="Netmask">
+<input type="text" id="0dns" class="ui-corner-all" value="DNS">
 </form>
-<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+<label><strong>WIFI info</strong></label>
+<form id="p5p1">
+<input type="text" id="1ip" class="ui-corner-all" value="IP">
+<input type="text" id="1broadcast" class="ui-corner-all" value="Boadcast">
+<input type="text" id="1netmask" class="ui-corner-all" value="Netmask">
+<input type="text" id="1dns" class="ui-corner-all" value="DNS">
+</form>
+
+</div>
 </div>
 <h3><a href="#" style="font-weight:bold;vertical-align:top">CDN</a></h3>
 <div>

@@ -21,8 +21,8 @@ preg_match("/^([A-z0-9]*\d)\s+Link\s+encap:([A-z]*)\s+HWaddr\s+([A-z0-9:]*).*" .
 if (!empty($regex)) {
 $interface = array();
 $interface['name'] = $regex[1];
-$interface['type'] = $regex[2];
-$interface['mac'] = $regex[3];
+// $interface['type'] = $regex[2];
+// $interface['mac'] = $regex[3];
 $interface['ip'] = $regex[4];
 $interface['broadcast'] = $regex[5];
 $interface['netmask'] = $regex[6];
@@ -54,6 +54,7 @@ $interfaces[] = $interface;
 
 }
 
+print (json_encode($interfaces));
 
-print_r($interfaces);
+// print_r($interfaces);
 ?>

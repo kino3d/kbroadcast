@@ -2,8 +2,6 @@
 		
 		$( "#accordion" ).accordion();
 		
-
-		
 		var availableTags = [
 			"ActionScript",
 			"AppleScript",
@@ -32,16 +30,10 @@
 			source: availableTags
 		});
 		
-
-		
 		$( "#button" ).button();
 		$( "#radioset" ).buttonset();
 		
-
-		
 		$( "#tabs" ).tabs();
-		
-
 		
 		$( "#dialog" ).dialog({
 			autoOpen: false,
@@ -68,25 +60,18 @@
 		//	event.preventDefault();
 		});
 		
-
-		
 		$( "#datepicker" ).datepicker({
 			inline: true
 		});
-		
 
-		
 		$( "#slider" ).slider({
 			range: true,
 			values: [ 17, 67 ]
 		});
-		
-
-		
+	
 		$( "#progressbar" ).progressbar({
 			value: 20
 		});
-		
 
 		// Hover states on the static widgets
 		$( "#dialog-link, #icons li" ).hover(
@@ -103,14 +88,13 @@ $(function() {
 $( "input[type=submit], button" )
 .button()
 .click(function( event ) {
-// event.preventDefault();
+event.preventDefault();
 });
 });
 
  $(function() {
 $( "#tabs" ).tabs();
 });
-
 
 $(function() {
 $( "#record" ).button({
@@ -129,6 +113,7 @@ icons: {
 primary: "ui-icon-stop"
 }
 };
+
 $.ajax({
   type: "GET",
   url: "/control/record/start?app=myapp&name=stream&rec=rec1",
@@ -136,7 +121,7 @@ $.ajax({
   success: function() {
 	$("#str_status").css("background-color","green");    
     //alert("success");
-    console.log();
+ //   console.log();
   },
   error: function() {
  //   alert("error");
@@ -150,6 +135,7 @@ icons: {
 primary: "ui-icon-bullet"
 }
 };
+
 $.ajax({
   type: "GET",
   url: "/control/record/stop?app=myapp&name=stream&rec=rec1",
@@ -157,7 +143,7 @@ $.ajax({
   success: function() {
 	$("#str_status").css("background-color","green");    
     //alert("success");
-    console.log();
+ //   console.log();
   },
   error: function() {
  //   alert("error");
@@ -215,7 +201,6 @@ icons:{
 primary: "ui-icon-refresh"
 }}).click(function(){
 $("#tabs").tabs("load",3);
-
 });
 
  $("#filem").scroll();
@@ -228,8 +213,13 @@ $( "#format" ).buttonset();
 $( "#radio" ).buttonset();
 $( "#radio1" ).buttonset();
 
+$( "#checkbox1" ).button();
 
-
+$(function(){
+// if ()
+$('.checkbox1').prop('checked', true);
+	
+});
 
 
 // $( "#accordion" ).accordion({
@@ -258,32 +248,9 @@ $.fn.togglepanels = function(){
 };
 
 $("#accordian").togglepanels();
-
- $("#sysm").scroll();
-
+$("#sysm").scroll();
 return false;
-
-
 });
-
-// $(function() {
-
-
-
-//    var allPanels = $('#accordion > div').show();
-
- /*   $('#accordion > h3 > a').click(function() {
-        $(this).parent().next('div').hide();
-        
-        if($(this).parent().next().is(':hidden'))
-        {
-            $(this).parent().next().show();
-        }
-        
-        return false;
-    });
-    */
-// });
 
 /*
 $( "#update" ).button({
@@ -295,6 +262,7 @@ primary: "ui-icon-clock"}
 	alert("yes");
 });
 */
+
 setInterval(function(){
 $.ajax({
   type: "GET",
@@ -338,15 +306,19 @@ $.ajax({
 });
 },3000);
 
-
-
+$(function(){
 $.ajax({
   type: "GET",
   url: "network.php",
   dataType: "json",
   success: function(data) {
-	$("#dhcp").html(data);  
- //	alert(resultlist);
- // 	console.log(data)
+	 $.each(data, function(i,item){
+	 	$.each(item,function(name, value){
+		//	console.log(name + ":"+ value);
+			$("#"+ i + name ).val(value);
+	//		$("#"+ i ).attr({name: i[0] ).val(item);	 		
+	 		})
+  });  
 	}});
+});
 
