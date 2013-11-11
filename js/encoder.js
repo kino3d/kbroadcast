@@ -1,88 +1,3 @@
-	$(function() {
-		
-		$( "#accordion" ).accordion();
-		
-		var availableTags = [
-			"ActionScript",
-			"AppleScript",
-			"Asp",
-			"BASIC",
-			"C",
-			"C++",
-			"Clojure",
-			"COBOL",
-			"ColdFusion",
-			"Erlang",
-			"Fortran",
-			"Groovy",
-			"Haskell",
-			"Java",
-			"JavaScript",
-			"Lisp",
-			"Perl",
-			"PHP",
-			"Python",
-			"Ruby",
-			"Scala",
-			"Scheme"
-		];
-		$( "#autocomplete" ).autocomplete({
-			source: availableTags
-		});
-		
-		$( "#button" ).button();
-		$( "#radioset" ).buttonset();
-		
-		$( "#tabs" ).tabs();
-		
-		$( "#dialog" ).dialog({
-			autoOpen: false,
-			width: 400,
-			buttons: [
-				{
-					text: "Ok",
-					click: function() {
-						$( this ).dialog( "close" );
-					}
-				},
-				{
-					text: "Cancel",
-					click: function() {
-						$( this ).dialog( "close" );
-					}
-				}
-			]
-		});
-
-		// Link to open the dialog
-		$( "#dialog-link" ).click(function( event ) {
-			$( "#dialog" ).dialog( "open" );
-		//	event.preventDefault();
-		});
-		
-		$( "#datepicker" ).datepicker({
-			inline: true
-		});
-
-		$( "#slider" ).slider({
-			range: true,
-			values: [ 17, 67 ]
-		});
-	
-		$( "#progressbar" ).progressbar({
-			value: 20
-		});
-
-		// Hover states on the static widgets
-		$( "#dialog-link, #icons li" ).hover(
-			function() {
-				$( this ).addClass( "ui-state-hover" );
-			},
-			function() {
-				$( this ).removeClass( "ui-state-hover" );
-			}
-		);
-	});
 
 $(function() {
 $( "input[type=submit], button" )
@@ -92,9 +7,6 @@ event.preventDefault();
 });
 });
 
- $(function() {
-$( "#tabs" ).tabs();
-});
 
 $(function() {
 $( "#record" ).button({
@@ -194,32 +106,12 @@ $.ajax({
 	}});
 });
 
-$( "#aggiorna1" ).button({
-text:true,
-label: "Aggiorna",
-icons:{
-primary: "ui-icon-refresh"
-}}).click(function(){
-$("#tabs").tabs("load",3);
-});
+
+
 
  $("#filem").scroll();
  
-$( "#check" ).button();
-$( "#checks" ).button();
 // $( "select" ).selectmenu();
-
-$( "#format" ).buttonset();
-$( "#radio" ).buttonset();
-$( "#radio1" ).buttonset();
-
-$( "#checkbox1" ).button();
-
-$(function(){
-// if ()
-$('.checkbox1').prop('checked', true);
-	
-});
 
 
 // $( "#accordion" ).accordion({
@@ -227,27 +119,6 @@ $('.checkbox1').prop('checked', true);
 // active:false
 //}); 
 
-$.fn.togglepanels = function(){
-  return this.each(function(){
-    $(this).addClass("ui-accordion ui-accordion-icons ui-widget ui-helper-reset")
-  .find("h3")
-    .addClass("ui-accordion-header ui-helper-reset ui-state-default ui-corner-top ui-corner-bottom")
-    .hover(function() { $(this).toggleClass("ui-state-hover"); })
-    .prepend('<span class="ui-icon ui-icon-triangle-1-e" style="display:inline-block"></span>')
-    .click(function() {
-      $(this)
-        .toggleClass("ui-accordion-header-active ui-state-active ui-state-default ui-corner-bottom")
-        .find("> .ui-icon").toggleClass("ui-icon-triangle-1-e ui-icon-triangle-1-s").end()
-        .next().slideToggle();
-      return false;
-    })
-    .next()
-      .addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom")
-      .hide();
-  });
-};
-
-$("#accordian").togglepanels();
 $("#sysm").scroll();
 return false;
 });
@@ -263,17 +134,45 @@ primary: "ui-icon-clock"}
 });
 */
 
-setInterval(function(){
+
+$(function(){
+var activeTab = null;
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  activeTab = $(e.target).attr('href');
+  // console.log("test");
+//  console.log($(e.target).attr('href'));
+   console.log(activeTab);
+
+if(activeTab == '#Tab3'){
+// setInterval(function(){
 $.ajax({
   type: "GET",
-  url: "update-rec.php",
+  url: "update-rec.php?media=rec",
   dataType: "html",
   success: function(data) {
 	$("#listfile").html(data);  
  //	alert(resultlist);
- // 	console.log(data)
+  //	console.log(data)
 	}});
-},3000);
+// },3000);
+};
+
+$('#refresh').click(function(){
+$.ajax({
+  type: "GET",
+  url: "update-rec.php?media=rec",
+  dataType: "html",
+  success: function(data) {
+	$("#listfile").html(data);  
+	}});
+})
+})
+});
+
+
+
+
+
 
 // $.getJSON("http://localhost/on_play", function(data){
 
@@ -321,4 +220,21 @@ $.ajax({
   });  
 	}});
 });
+
+	$(document).ready(function() {
+			$('form').attr("autocomplete", "off"); 	
+		//	$("#test").after("<input type='text' name='test2' value='Test 2' />"); 
+		}); 
+
+// $("#demo").collapse()
+
+$(function(){						
+$('#dhcp').click(function () {
+	console.log("help");
+    $('#demo').toggle(this.checked);
+    $('#dhcp').html('Manuale');
+})});					
+
+
+
 

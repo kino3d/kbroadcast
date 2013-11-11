@@ -67,7 +67,7 @@ if(sizeof($ffmpeg_output) == null ) {
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
 	<link rel="shortcut icon" href="ico/favicon.png" />
-	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery-ui-1.10.2.custom.js"></script>
 	<script src="js/encoder.js"></script>
 	<link href="css/kino-theme/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
@@ -167,12 +167,13 @@ if(sizeof($ffmpeg_output) == null ) {
 <button id="timer"></button>
 </div>
 
+
 <script type='text/javascript'>
 	jwplayer('mediaspace').setup({
 		modes: [
 		{type:"flash",src:"https://eventilive.top-ix.org/player/jw/player.swf"},
 	{ type:"html5",
-	config: {file:" http://<?php echo $hostname;?>/mobile/stream.m3u8",
+	config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8",
 	provider:"video"}} 
 					],
 		'file': 'stream',
