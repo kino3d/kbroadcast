@@ -230,10 +230,18 @@ $.ajax({
 
 $(function(){						
 $('#dhcp').click(function () {
-	console.log("help");
-    $('#demo').toggle(this.checked);
-    $('#dhcp').html('Manuale');
+//	console.log("help");
+    $('#demo').hide(this.checked);
+//    $('#dhcp').html('Manuale');
 })});					
+
+$(function(){						
+$('#manuale').click(function () {
+//	console.log("help");
+    $('#demo').show(this.checked);
+//    $('#dhcp').html('Manuale');
+})});
+
 
 
 

@@ -272,7 +272,8 @@ if(sizeof($ffmpeg_output) == null ) {
 		 <div id="collapseTwo" class="panel-collapse collapse in">
 			<div class="panel-body">     
 				<div class="form-group input-group input-group-sm col-md-12">	
-					<button type="checkbox" class="btn btn-primary" id="dhcp">DHCP</button>
+					<button type="checkbox" class="btn btn-primary btn-sm" id="dhcp">DHCP</button>
+					<button type="checkbox" class="btn btn-primary btn-sm" id="manuale">Manuale</button>
 				</div>
 				<div id="demo" class="panel panel-default" style="display:none">
 				<div class="panel-body">
@@ -286,7 +287,7 @@ if(sizeof($ffmpeg_output) == null ) {
 						<span class="input-group-addon">Netmask</span>
 						<input type="text" id="0netmask" class="form-control input-sm" value="Netmask">
 							</div>
-							<div class="btn-group form-group input-group input-group-sm col-md-7" >
+							<div class="btn-group form-group input-group input-group-sm col-md-10" >
 							<span class="input-group-addon">Gateway</span>
 							<input type="text" id="0gateway" class="form-control input-sm" value="Gateway">
 							<span class="input-group-addon">DNS</span>
