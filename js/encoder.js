@@ -66,6 +66,13 @@ $.ajax({
 $( this ).button( "option", options ).toggleClass("red");
 });
 
+// Start capture card 
+
+$("#av_status").button().click(function(){
+	$("#av_status").val("stop capture");	
+	});
+
+
 // Stream Button
 $( "#stream" ).button({
 label:"Stream",
@@ -91,6 +98,7 @@ icons:{
 primary: "ui-icon-clock"
 }}).attr("disabled",false).addClass("ui-state-highlight");
 
+
 $( "#aggiorna" ).button({
 text:true,
 label: "Aggiorna",
@@ -111,35 +119,16 @@ $.ajax({
 
  $("#filem").scroll();
  
-// $( "select" ).selectmenu();
-
-
-// $( "#accordion" ).accordion({
-//collapsible: true,
-// active:false
-//}); 
-
 $("#sysm").scroll();
 return false;
 });
 
-/*
-$( "#update" ).button({
-text:true,
-label: "Aggiorna",
-icons:{
-primary: "ui-icon-clock"}
-}).click(function(){
-	alert("yes");
-});
-*/
-
+// Tabs
 
 $(function(){
 var activeTab = null;
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   activeTab = $(e.target).attr('href');
-  // console.log("test");
 //  console.log($(e.target).attr('href'));
    console.log(activeTab);
 
@@ -170,17 +159,6 @@ $.ajax({
 });
 
 
-
-
-
-
-// $.getJSON("http://localhost/on_play", function(data){
-
- //   $.each(data, function(key, value){
- //       document.write(key+": "+value+"<br />"); 
- //   });
-// });
-
 setInterval(function(){
 $.ajax({
  type: "GET",
@@ -195,7 +173,7 @@ $.ajax({
 	{  $("#str_status").addClass("").css("background-color","red").val("Stop");  }
 	//jwplayer().play();   
     //alert("success");
-	console.log(data);
+//	console.log(data);
   },
   error: function() {
  //   alert("error");
@@ -221,6 +199,65 @@ $.ajax({
 	}});
 });
 
+setInterval(function(){
+$.ajax({
+  type: "GET",
+  url: "network.php?network=ping",
+  dataType: "json",
+  success: function(data) {
+//	console.log(data);	
+	if (data === 'online'){
+	$("#nonetwork").removeClass("panel-danger").addClass("panel-success");
+	$(".connected").html(" Online").removeClass("text-danger").addClass("text-success");
+		
+		} 
+		else {
+	$("#nonetwork").removeClass("panel-success").addClass("panel-danger");	
+	$(".connected").html(" Offline").removeClass("text-success").addClass("text-danger");
+			
+			}
+
+	}});
+},10000);
+
+$(function(){
+$.ajax({
+  type: "GET",
+  url: "network.php?network=ping",
+  dataType: "json",
+  success: function(data) {
+//	console.log(data);	
+	if (data === 'online'){
+	$("#nonetwork").removeClass("panel-danger").addClass("panel-success");	
+	$(".connected").html(" Online").removeClass("text-danger").addClass("text-success");
+			
+		} 
+		else {
+ 	$("#nonetwork").removeClass("panel-success").addClass("panel-danger");			
+	$(".connected").html(" Offline").removeClass("text-success").addClass("text-danger");
+		
+			}
+	}});		
+	});
+
+$(function(){
+$.ajax({
+  type: "GET",
+  url: "network.php?network=nettype",
+  dataType: "json",
+  success: function(data) {
+	console.log(data);	
+	if (data === 'dhcp'){
+		$('.dhcp').prop("checked", true);
+		$('#p5p1 :input').prop("disabled", true);
+		} 
+	if (data === 'static'){
+		$('.manual').prop("checked", true);
+		$('#p5p1 :input').prop("disabled", false);	
+			}
+	}});		
+	});
+
 	$(document).ready(function() {
 			$('form').attr("autocomplete", "off"); 	
 		//	$("#test").after("<input type='text' name='test2' value='Test 2' />"); 
@@ -231,14 +268,16 @@ $.ajax({
 $(function(){						
 $('#dhcp').click(function () {
 //	console.log("help");
-    $('#demo').hide(this.checked);
+
+    $('#p5p1 :input').prop("disabled", true);
 //    $('#dhcp').html('Manuale');
 })});					
 
 $(function(){						
 $('#manuale').click(function () {
 //	console.log("help");
-    $('#demo').show(this.checked);
+
+    $('#p5p1 :input').prop("disabled", false);
 //    $('#dhcp').html('Manuale');
 })});
 

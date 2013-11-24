@@ -83,8 +83,8 @@ if(sizeof($ffmpeg_output) == null ) {
      			<li><a href="#Tab2" data-toggle="tab">Player</a></li>
      			<li><a href="#Tab3" data-toggle="tab">Media</a></li>
      			<li class="active"><a href="#Tab4" data-toggle="tab">Sistema</a></li>
+     			<small class="pull-right" style="border-bottom:1px solid #dfdfdf"><span id="connected" class="connected text-right text-danger">Offline</span></small>
     		</ul>
-    
 	<div class="tab-content">
 			<div class="tab-pane panel-body" id="Tab1">
 			
@@ -119,7 +119,7 @@ if(sizeof($ffmpeg_output) == null ) {
 					</select>
 					</div>
 					<div class="form-group pull-right">
-					<input type="submit" value="start video" id="str_status" class="btn btn-default btn-sm" class="src_stats">
+					<input type="submit" value="capture" id="av_status" class="btn btn-default btn-sm" class="av_status">
 					</div>
 					</small>
 					</form>
@@ -252,38 +252,26 @@ if(sizeof($ffmpeg_output) == null ) {
 				</div>
       		</div>
      <div class="tab-pane panel-body  active" id="Tab4">
-		<div class="panel-group" id="accordion">
-		  <div class="panel panel-default">
-    		<div class="panel-heading">
-      			<h4 class="panel-title">
-        		<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Info Sistema</a></h4>
-			</div> 
-			<div id="collapseOne" class="panel-collapse collapse">
-      			<div class="panel-body">
-<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-				</div>
-  			</div>
-    	</div>
- 			 <div class="panel panel-default">
+		<div class="panel-group" id="accordion">		 
+ 			 <div class="panel panel-default nonetwork" id="nonetwork">
    			 <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Rete</a></h4>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Rete</a><small class="pull-right">Connessione: <span id="connected" class="connected text-right text-danger"> Offline</span></small></h4>
+        
 		</div>
 		 <div id="collapseTwo" class="panel-collapse collapse in">
 			<div class="panel-body">     
 				<div class="form-group input-group input-group-sm col-md-12">	
-					<button type="checkbox" class="btn btn-primary btn-sm" id="dhcp">DHCP</button>
-					<button type="checkbox" class="btn btn-primary btn-sm" id="manuale">Manuale</button>
+					<button type="checkbox" class="btn btn-primary btn-xs dhcp" id="dhcp">DHCP</button>
+					<button type="checkbox" class="btn btn-primary btn-xs" id="manuale">Manuale</button>
 				</div>
-				<div id="demo" class="panel panel-default" style="display:none">
-				<div class="panel-body">
-						<form id="p5p1"  role="form" >		
+				<form id="p5p1" class="p5p1"  role="form" >		
 						<label for="p5p1"><strong id="eth0">Ethernet</strong></label>				
 							<div class="btn-group form-group input-group input-group-sm col-md-12" >
 							<span class="input-group-addon">IP</span>
 							<input type="text" id="0ip" class="form-control input-sm" value="IP">
-							<span class="input-group-addon">Broadcast</span>
-						<input type="text" id="0broadcast" class="form-control input-sm" value="Boadcast">
+					<!--		<span class="input-group-addon">Broadcast</span>
+						<input type="text" id="0broadcast" class="form-control input-sm" value="Boadcast"> -->
 						<span class="input-group-addon">Netmask</span>
 						<input type="text" id="0netmask" class="form-control input-sm" value="Netmask">
 							</div>
@@ -294,11 +282,10 @@ if(sizeof($ffmpeg_output) == null ) {
 							<input type="text" id="0dns" class="form-control input-sm" value="DNS">
 							</div>
 							<button type="submit" class="btn btn-default btn-sm">Imposta</button>
-						</form>
-					</div>
-					</div>
+				</form>
+					
 					<div class="clearfix small">&nbsp;</div>
-					<label for="p5p1"><strong>WIFI info</strong></label>
+					<label for="wlan01"><strong>WIFI info</strong></label>
 					<form id="wlan01">
 					<div class="btn-group form-group input-group input-group-sm col-md-12" >
 						<span class="input-group-addon">IP</span>
@@ -329,6 +316,17 @@ if(sizeof($ffmpeg_output) == null ) {
 			 </div>
     	</div>
   </div>
+   <div class="panel panel-default">
+    		<div class="panel-heading">
+      			<h4 class="panel-title">
+        		<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Info Sistema</a></h4>
+			</div> 
+			<div id="collapseOne" class="panel-collapse collapse">
+      			<div class="panel-body">
+<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+				</div>
+  			</div>
+    	</div>
 </div>
 
 </div>
