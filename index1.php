@@ -1,11 +1,9 @@
-<?php header('Access-Control-Allow-Origin: *'); 
-
+<?php header('Access-Control-Allow-Origin: *');
 #Network stuff
 $hostname = gethostbyaddr($_SERVER['SERVER_ADDR']);
 // echo $hostname;
 /*
 if(sizeof($ffmpeg_output) == null ) {
-        
         return null;
         }
         $json = json_decode($ffmpeg_output,true);
@@ -14,7 +12,7 @@ if(sizeof($ffmpeg_output) == null ) {
         //echo json_encode($json, JSON_PRETTY_PRINT);
         //echo "</pre>";
         $video_codec=$json['streams'][0]['codec_name'];
-        $width=$json['streams'][0]['width'];  
+        $width=$json['streams'][0]['width'];
         $height=$json['streams'][0]['height'];
         $r_frame_rate=$json['streams'][0]['r_frame_rate'];
         $fr=explode("/",$r_frame_rate);
@@ -23,17 +21,17 @@ if(sizeof($ffmpeg_output) == null ) {
         $video_profile =$json['streams'][0]['profile'];
         $video_level =$json['streams'][0]['level'];
         $duration=$json['streams'][0]['duration'];
-        $audio_codec=$json['streams'][1]['codec_name']; 
+        $audio_codec=$json['streams'][1]['codec_name'];
         $sample_rate=$json['streams'][1]['sample_rate'];
         $channels=$json['streams'][1]['channels'];
         $bit_rate=round($json['streams'][1]['bit_rate']/1000,0);
         $resultset = array( 'video_codec' => $video_codec,
-                                'width' => $width,  
+                                'width' => $width,
                                 'height' => $height,
-                                'r_frame_rate'  => $r_frame_rate,  
+                                'r_frame_rate'  => $r_frame_rate,
                                 'video_bitrate'  => $video_bitrate,
                                 'profile' => $video_profile,
-                                'level' => $video_level, 
+                                'level' => $video_level,
                                 'duration'  => $duration,
                                 'audio_codec'  => $audio_codec,
                                 'sample_rate'  => $sample_rate,
@@ -42,10 +40,7 @@ if(sizeof($ffmpeg_output) == null ) {
                                 );
         return  $resultset;
                      //   }
-
 */
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,29 +50,25 @@ if(sizeof($ffmpeg_output) == null ) {
     <meta name="description" content="">
     <meta name="author" content="kino" >
     <link rel="shortcut icon" href="ico/favicon.png">
-
     <title>Encoder alpha 0.1</title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/encoder.js"></script>
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
- <!--   <script type='text/javascript' src="player/jw/jwplayer.js"></script> --> 
- 	<script type='text/javascript' src='http://live.top-ix.org/player/jw/jwplayer.js'></script> 
- 	<link href="css/bootstrap.css" rel="stylesheet">  
-	<link href="css/encoder.css" rel="stylesheet">   
+ <!--   <script type='text/javascript' src="player/jw/jwplayer.js"></script> -->
+ 	<script type='text/javascript' src='http://live.top-ix.org/player/jw/jwplayer.js'></script>
+ 	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/encoder.css" rel="stylesheet">
   </head>
-
   <body>
-
     <!-- Wrap all page content here -->
-    <div id="wrap"> 
+    <div id="wrap">
 <div class="container">
-<div class="tabbable navbar" role="navigation">		
+<div class="tabbable navbar" role="navigation">
      		<ul id="tab" class="nav nav-tabs ">
      			<li class="active"><a href="#Tab1" data-toggle="tab" >Encoder</a></li>
      			<li><a href="#Tab2" data-toggle="tab">Player</a></li>
@@ -87,13 +78,12 @@ if(sizeof($ffmpeg_output) == null ) {
     		</ul>
 	<div class="tab-content">
 			<div class="tab-pane panel-body active" id="Tab1">
-			
       <!-- Begin page content -->
         	<div class="well well-sm">
-				<form id="source" class="form-inline">				
+				<form id="source" class="form-inline">
 				<small>
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
-					<label class="btn btn-primary btn-xs" >					
+					<label class="btn btn-primary btn-xs" >
 					<input class="form-control input-xs" type="radio" value="1" name="radio1" id="checks1">HDMI</label>
 					</div>
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
@@ -133,10 +123,10 @@ if(sizeof($ffmpeg_output) == null ) {
 		{type:"flash",src:"https://eventilive.top-ix.org/player/jw/player.swf"},
 	{ type:"html5",
 	config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8",
-	provider:"video"}} 
+	provider:"video"}}
 					],
 		'file': 'stream',
-	/*  'image':'../plug-small1-70.png', */ 
+	/*  'image':'../plug-small1-70.png', */
 	rtmp:{subscribe:false,
 	bufferlength: 0},
 		'frontcolor': 'ffffff',
@@ -157,17 +147,16 @@ if(sizeof($ffmpeg_output) == null ) {
 		// "gapro-2": {}
 	}
 		});
-
-</script> 
+</script>
  -->
  <script type='text/javascript'>
 	jwplayer('mediaspace').setup({
 		modes: [
 		{type:"flash", src:"http://live.top-ix.org/player/jw/player.swf"},
-		{ type:"html5", config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8', provider:'video"}} 
+		{ type:"html5", config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8', provider:'video"}}
 					],
-		file: 'flv:stream',
-	/*  'image':'../plug-small1-70.png', */ 
+		file: 'stream',
+	/*  'image':'../plug-small1-70.png', */
 		frontcolor: 'ffffff',
 		lightcolor: 'cc9900',
 		screencolor: 'ffffff',
@@ -178,8 +167,8 @@ if(sizeof($ffmpeg_output) == null ) {
 		stretching: 'scale',
 		controlbar: 'over',
 		backgroundcolor: '000000',
-//		width: "100%",
-//		height: "100%",
+		width: '100%',
+		height: '100%',
 		aspectratio: '16:9',
 		icons:'true',
 		controls:'false',
@@ -187,18 +176,16 @@ if(sizeof($ffmpeg_output) == null ) {
 		// "gapro-2": {}
 //	}
 		});
-
 </script>
-
 			<div class="panel panel-default">
 				<div class="panel-heading"><strong>Broadcast</strong></div>
 					<div class="panel-body">
 					<form role="form" >
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons" style="margin-bottom:3px">
 					<label for="check1" class="btn btn-primary disabled btn-sm"><strong>Video:</strong></label>
-					<label for="check1" class="btn btn-primary btn-sm">					
+					<label for="check1" class="btn btn-primary btn-sm">
 					<input class="form-control input-sm" type="radio" id="check1" name="radio" checked="checked" />Alta</label>
-					<label for="check2" class="btn btn-primary btn-sm">	
+					<label for="check2" class="btn btn-primary btn-sm">
 					<input class="form-control input-sm" type="radio" id="check2" name="radio" />Media</label>
 					<label for="check3"  class="btn btn-primary btn-sm">
 					<input class="form-control input-sm" type="radio" id="check3" name="radio" />Bassa</label>
@@ -233,41 +220,40 @@ if(sizeof($ffmpeg_output) == null ) {
 				</div>
  					 <div class="panel-body">
  					 	<button type="button" id="refresh" class="btn navbar-btn btn-sm btn-success navbar-right">Aggiorna <span class="glyphicon glyphicon-refresh text-success"></span></button>
- 					 	<div class="clearfix"></div>		
+ 					 	<div class="clearfix"></div>
 							<div id="listfile" class="filem ">
 								<ul class="list-unstyled">
 									<li id="files" class="rows"></li>
 								</ul>
 							</div>
-						</div>	
+						</div>
 				</div>
 					<div class="panel panel-default">
 				<div class="panel-heading"><strong>USB Storage</strong></div>
- 					 <div class="panel-body">				
+ 					 <div class="panel-body">
 							<div id="listfile" class="filem ui-corner-all">
 								<ul class="class="list-unstyled"">
 									<li id="files" class="rows"></li>
 								</ul>
 							</div>
-						</div>	
+						</div>
 				</div>
       		</div>
      <div class="tab-pane panel-body" id="Tab4">
-		<div class="panel-group" id="accordion">		 
+		<div class="panel-group" id="accordion">
  			 <div class="panel panel-default nonetwork" id="nonetwork">
    			 <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Rete</a><small class="pull-right">Connessione: <span id="connected" class="connected text-right text-danger"> Offline</span></small></h4>
-        
 		</div>
 		 <div id="collapseTwo" class="panel-collapse collapse">
-			<div class="panel-body">     
-				<div class="form-group input-group input-group-sm col-md-12">	
+			<div class="panel-body">
+				<div class="form-group input-group input-group-sm col-md-12">
 					<button type="checkbox" class="btn btn-primary btn-xs dhcp" id="dhcp">DHCP</button>
 					<button type="checkbox" class="btn btn-primary btn-xs" id="manuale">Manuale</button>
 				</div>
-				<form id="p5p1" class="p5p1"  role="form" >		
-						<label for="p5p1"><strong id="eth0">Ethernet</strong></label>				
+				<form id="p5p1" class="p5p1"  role="form" >
+						<label for="p5p1"><strong id="eth0">Ethernet</strong></label>
 							<div class="btn-group form-group input-group input-group-sm col-md-12" >
 							<span class="input-group-addon">IP</span>
 							<input type="text" id="0ip" class="form-control input-sm" value="IP">
@@ -284,7 +270,6 @@ if(sizeof($ffmpeg_output) == null ) {
 							</div>
 							<button type="submit" class="btn btn-default btn-sm">Imposta</button>
 				</form>
-					
 					<div class="clearfix small">&nbsp;</div>
 					<label for="wlan01"><strong>WIFI info</strong></label>
 					<form id="wlan01">
@@ -301,11 +286,9 @@ if(sizeof($ffmpeg_output) == null ) {
 						<input type="text" id="1dns" class="form-control input-sm" value="DNS" disabled>
 					</div>
 					</form>
-					
 			</div>
  		</div>
     </div>
-
 <div class="panel panel-default">
    			 <div class="panel-heading">
       			<h4 class="panel-title">
@@ -313,21 +296,22 @@ if(sizeof($ffmpeg_output) == null ) {
 			</div>
  		<div id="collapseThree" class="panel-collapse collapse">
       		<div class="panel-body">
-				<form id="cdn" class="cdn"  role="form" >		
-						<label for="cdn"><strong id="eth0">CDN</strong></label>				
+				<form id="cdn" class="cdn"  role="form" >
+						<label for="cdn"><strong id="eth0">CDN</strong> <small class="text-info">* solo admin</small></label>
 							<div class="btn-group form-group input-group input-group-sm col-md-12" >
-							<span class="input-group-addon">Server rtmp</span>
-							<input type="text" id="s_rtmp" class="form-control input-sm" value="wowza1.streamtech.it">
+							<span class="input-group-addon text-info">Server rtmp</span>
+							<input type="text" id="s_rtmp" class="form-control input-sm" value="wowza1.streamtech.it" disabled>
 					<!--		<span class="input-group-addon">Broadcast</span>
 						<input type="text" id="0broadcast" class="form-control input-sm" value="Boadcast"> -->
-						<span class="input-group-addon">Nome app</span>
-						<input type="text" id="app_name" class="form-control input-sm" value="streamtech">
+						<span class="input-group-addon text-info">Nome app</span>
+						<input type="text" id="app_name" class="form-control input-sm" value="streamtech" disabled>
 							</div>
-							<div class="btn-group form-group input-group input-group-sm col-md-10" >
+							<div class="btn-group form-group input-group input-group-sm col-md-8" >
 							<span class="input-group-addon">Nome flusso</span>
 							<input type="text" id="stream_name" class="form-control input-sm" value="">
 							</div>
-							<button type="submit" class="btn btn-default btn-sm">Imposta</button>
+							<button type="submit" class="btn btn-default btn-sm">Genera</button>
+							<button type="submit" class="btn btn-default btn-sm text-info" disabled>Imposta</button>
 				</form>
 			 </div>
     	</div>
@@ -336,7 +320,7 @@ if(sizeof($ffmpeg_output) == null ) {
     		<div class="panel-heading">
       			<h4 class="panel-title">
         		<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Info Sistema</a></h4>
-			</div> 
+			</div>
 			<div id="collapseOne" class="panel-collapse collapse">
       			<div class="panel-body">
 <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
@@ -344,7 +328,6 @@ if(sizeof($ffmpeg_output) == null ) {
   			</div>
     	</div>
 </div>
-
 </div>
 </div>
       		</div>
@@ -352,7 +335,6 @@ if(sizeof($ffmpeg_output) == null ) {
 	</div>
 </div>
 </div>
- 
    <!-- <div id="footer">
       <div class="container">
         <p class="text-muted credit">Example courtesy .</p>
