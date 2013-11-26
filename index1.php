@@ -57,7 +57,7 @@ if(sizeof($ffmpeg_output) == null ) {
     <link rel="shortcut icon" href="ico/favicon.png">
 
     <title>Encoder alpha 0.1</title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/encoder.js"></script>
 
@@ -66,10 +66,10 @@ if(sizeof($ffmpeg_output) == null ) {
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-   <script type='text/javascript' src="player/jw/jwplayer.js"></script> 
- <!--	<script type='text/javascript' src='https://eventilive.top-ix.org/player/jw/jwplayer.js'></script> -->
- 		<link href="css/bootstrap.css" rel="stylesheet">  
-		<link href="css/encoder.css" rel="stylesheet">   
+ <!--   <script type='text/javascript' src="player/jw/jwplayer.js"></script> --> 
+ 	<script type='text/javascript' src='http://live.top-ix.org/player/jw/jwplayer.js'></script> 
+ 	<link href="css/bootstrap.css" rel="stylesheet">  
+	<link href="css/encoder.css" rel="stylesheet">   
   </head>
 
   <body>
@@ -79,31 +79,30 @@ if(sizeof($ffmpeg_output) == null ) {
 <div class="container">
 <div class="tabbable navbar" role="navigation">		
      		<ul id="tab" class="nav nav-tabs ">
-     			<li ><a href="#Tab1" data-toggle="tab">Encoder</a></li>
+     			<li class="active"><a href="#Tab1" data-toggle="tab" >Encoder</a></li>
      			<li><a href="#Tab2" data-toggle="tab">Player</a></li>
      			<li><a href="#Tab3" data-toggle="tab">Media</a></li>
-     			<li class="active"><a href="#Tab4" data-toggle="tab">Sistema</a></li>
+     			<li><a href="#Tab4" data-toggle="tab">Sistema</a></li>
      			<small class="pull-right" style="border-bottom:1px solid #dfdfdf"><span id="connected" class="connected text-right text-danger">Offline</span></small>
     		</ul>
 	<div class="tab-content">
-			<div class="tab-pane panel-body" id="Tab1">
+			<div class="tab-pane panel-body active" id="Tab1">
 			
       <!-- Begin page content -->
         	<div class="well well-sm">
 				<form id="source" class="form-inline">				
 				<small>
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
-					<label class="btn btn-primary btn-sm" >					
-					<input class="form-control input-sm" type="radio" value="1" name="radio1" id="checks1">HDMI</label>
+					<label class="btn btn-primary btn-xs" >					
+					<input class="form-control input-xs" type="radio" value="1" name="radio1" id="checks1">HDMI</label>
 					</div>
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
-					<label class="btn btn-primary btn-sm">
-					<input class="form-control input-sm" type="radio" value="0" name="radio1" id="checks2" >SDI</label>
+					<label class="btn btn-primary btn-xs">
+					<input class="form-control input-xs" type="radio" value="0" name="radio1" id="checks2" >SDI</label>
 						</div>
-						<div class="form-group">	
+						<div class="form-group">
 					<select id="select" class="form-control input-sm">
 					<option value="2">PAL 720x576 25FPS</option>
-				<!--	<option value="3">NTSC Progressive 720x486 59.9401FPS</option> -->
 					<option value="4">PAL Progressive 720x576 50FPS</option>
 					<option value="5">HD 1080p 23.98 1920x1080 23.976FPS</option>
 					<option value="6">HD 1080p 24 1920x1080 24FPS</option>
@@ -124,8 +123,9 @@ if(sizeof($ffmpeg_output) == null ) {
 					</small>
 					</form>
 					</div>
-	
-        <div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
+        	<div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
+        <div class="clearfix"></div>
+        <br>
  <!--
 <script type='text/javascript'>
 	jwplayer('mediaspace').setup({
@@ -163,25 +163,26 @@ if(sizeof($ffmpeg_output) == null ) {
  <script type='text/javascript'>
 	jwplayer('mediaspace').setup({
 		modes: [
-		{type:"flash", src:"/encoder/player/jw/player.swf"},
+		{type:"flash", src:"http://live.top-ix.org/player/jw/player.swf"},
 		{ type:"html5", config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8', provider:'video"}} 
 					],
-		'file': 'flv:stream',
+		file: 'flv:stream',
 	/*  'image':'../plug-small1-70.png', */ 
-		'frontcolor': 'ffffff',
-		'lightcolor': 'cc9900',
-		'screencolor': 'ffffff',
-		'backcolor':'434343',
-		'provider':'rtmp',
-		'streamer':"rtmp://<?php echo $hostname;?>/myapp",
-		'autostart': 'true',
-		'stretching': 'scale',
-		'controlbar': 'over',
-		'backgroundcolor': '000000',
-		'width': '540',
-		'height': '304',
-		'icons':'true',
-		'controls':'false',
+		frontcolor: 'ffffff',
+		lightcolor: 'cc9900',
+		screencolor: 'ffffff',
+		backcolor:'434343',
+		provider:'rtmp',
+		streamer:"rtmp://<?php echo $hostname;?>/myapp",
+		autostart: 'true',
+		stretching: 'scale',
+		controlbar: 'over',
+		backgroundcolor: '000000',
+//		width: "100%",
+//		height: "100%",
+		aspectratio: '16:9',
+		icons:'true',
+		controls:'false',
 	//	"plugins": {
 		// "gapro-2": {}
 //	}
@@ -251,7 +252,7 @@ if(sizeof($ffmpeg_output) == null ) {
 						</div>	
 				</div>
       		</div>
-     <div class="tab-pane panel-body  active" id="Tab4">
+     <div class="tab-pane panel-body" id="Tab4">
 		<div class="panel-group" id="accordion">		 
  			 <div class="panel panel-default nonetwork" id="nonetwork">
    			 <div class="panel-heading">
@@ -259,7 +260,7 @@ if(sizeof($ffmpeg_output) == null ) {
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Rete</a><small class="pull-right">Connessione: <span id="connected" class="connected text-right text-danger"> Offline</span></small></h4>
         
 		</div>
-		 <div id="collapseTwo" class="panel-collapse collapse in">
+		 <div id="collapseTwo" class="panel-collapse collapse">
 			<div class="panel-body">     
 				<div class="form-group input-group input-group-sm col-md-12">	
 					<button type="checkbox" class="btn btn-primary btn-xs dhcp" id="dhcp">DHCP</button>

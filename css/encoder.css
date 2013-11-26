@@ -56,17 +56,24 @@ code {
 	   height: 100%;
   }
       
-  #mediaspace {
-  //  max-width: 540px;
+#mediaspacer {
+    max-width: 580px;
   //  height: auto;
+  // width:100%;
    	border:1px solid #dfdfdf;
     outline: none;
     padding:0px;
 //	background-repeat: no-repeat;
 //	background-color: #000;
-	margin:10px auto;
+	margin:0px auto;
   }
 
+#mediaspace_wrapper {
+//	width: 100%;
+//	height: 100%;
+//	max-width: 580px;
+	margin: auto;	
+	}
   
   	#dialog-link {
 		padding: .4em 1em .4em 20px;

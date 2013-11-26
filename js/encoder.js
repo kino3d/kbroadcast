@@ -246,7 +246,7 @@ $.ajax({
   url: "network.php?network=nettype",
   dataType: "json",
   success: function(data) {
-	console.log(data);	
+//	console.log(data);	
 	if (data === 'dhcp'){
 		$('.dhcp').prop("checked", true);
 		$('#p5p1 :input').prop("disabled", true);
