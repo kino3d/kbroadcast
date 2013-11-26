@@ -326,8 +326,6 @@ if(sizeof($ffmpeg_output) == null ) {
 							<div class="btn-group form-group input-group input-group-sm col-md-10" >
 							<span class="input-group-addon">Nome flusso</span>
 							<input type="text" id="stream_name" class="form-control input-sm" value="">
-							<span class="input-group-addon">DNS</span>
-							<input type="text" id="0dns" class="form-control input-sm" value="DNS">
 							</div>
 							<button type="submit" class="btn btn-default btn-sm">Imposta</button>
 				</form>
