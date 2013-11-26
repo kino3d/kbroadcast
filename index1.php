@@ -313,7 +313,24 @@ if(sizeof($ffmpeg_output) == null ) {
 			</div>
  		<div id="collapseThree" class="panel-collapse collapse">
       		<div class="panel-body">
-<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+				<form id="cdn" class="cdn"  role="form" >		
+						<label for="cdn"><strong id="eth0">CDN</strong></label>				
+							<div class="btn-group form-group input-group input-group-sm col-md-12" >
+							<span class="input-group-addon">Server rtmp</span>
+							<input type="text" id="s_rtmp" class="form-control input-sm" value="wowza1.streamtech.it">
+					<!--		<span class="input-group-addon">Broadcast</span>
+						<input type="text" id="0broadcast" class="form-control input-sm" value="Boadcast"> -->
+						<span class="input-group-addon">Nome app</span>
+						<input type="text" id="app_name" class="form-control input-sm" value="streamtech">
+							</div>
+							<div class="btn-group form-group input-group input-group-sm col-md-10" >
+							<span class="input-group-addon">Nome flusso</span>
+							<input type="text" id="stream_name" class="form-control input-sm" value="">
+							<span class="input-group-addon">DNS</span>
+							<input type="text" id="0dns" class="form-control input-sm" value="DNS">
+							</div>
+							<button type="submit" class="btn btn-default btn-sm">Imposta</button>
+				</form>
 			 </div>
     	</div>
   </div>
