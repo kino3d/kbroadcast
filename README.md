@@ -1,9 +1,13 @@
-# This is my README
-Small Rasp-PI encoder 
+# T-encoder
+Blacmagick SD/HD streaming encoder web interface
 
-- nginx + nginx-rtmp module
-- ffmpeg git version
-- gstreamer0.10 all plugins
-- gstd git version
+Require
+- nginx + nginx-rtmp module git version http://nginx.org with php5 
+- twitter bootstrap + jquery 
+- libav git version http://libav.org
+- bmdtools luzero git 
+- gstreamer0.10 all plugins (not now)
+- gstd git version (not now)
+
 
 kino  
