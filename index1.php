@@ -113,7 +113,10 @@ if(sizeof($ffmpeg_output) == null ) {
 					</small>
 					</form>
 					</div>
+					<div class="clearfix"></div>
+				
         	<div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
+        	
         <div class="clearfix"></div>
         <br>
  <!--
@@ -156,6 +159,9 @@ if(sizeof($ffmpeg_output) == null ) {
 		{ type:"html5", config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8', provider:'video"}}
 					],
 		file: 'stream',
+		'width': '500',
+		'height': '282',
+		aspectratio: '16:9',
 	/*  'image':'../plug-small1-70.png', */
 		frontcolor: 'ffffff',
 		lightcolor: 'cc9900',
@@ -167,9 +173,6 @@ if(sizeof($ffmpeg_output) == null ) {
 		stretching: 'scale',
 		controlbar: 'over',
 		backgroundcolor: '000000',
-		width: '100%',
-		height: '100%',
-		aspectratio: '16:9',
 		icons:'true',
 		controls:'false',
 	//	"plugins": {
@@ -204,6 +207,12 @@ if(sizeof($ffmpeg_output) == null ) {
 					<button id="stream" class="btn btn-primary btn-sm btn-success">Start</button>
 					</div>
 					</form>
+					<div class="clearfix"></div><br>
+					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
+				
+					<button class="btn btn-default btn-xs" id="record">Registra</button>
+					<button class="btn btn-default btn-xs" id="timer">00:00:00</button>
+					</div>			
 					</div>
 					</div>
       		</div>
@@ -311,7 +320,7 @@ if(sizeof($ffmpeg_output) == null ) {
 							<input type="text" id="stream_name" class="form-control input-sm" value="">
 							</div>
 							<button type="submit" class="btn btn-default btn-sm">Genera</button>
-							<button type="submit" class="btn btn-default btn-sm text-info" disabled>Imposta</button>
+							<button type="submit" class="btn btn-default btn-sm btn-info" disabled>Imposta</button>
 				</form>
 			 </div>
     	</div>
