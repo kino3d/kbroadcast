@@ -193,6 +193,10 @@ if(sizeof($ffmpeg_output) == null ) {
 					<label for="check3"  class="btn btn-primary btn-sm">
 					<input class="form-control input-sm" type="radio" id="check3" name="radio" />Bassa</label>
 					</div>
+					<div class="form-group input-group input-group-sm col-xs-4">
+					<span class="input-group-addon">Bitrate</span>
+						<input type="text" id="bitrate" class="form-control input-sm" value="bitrate">
+						</div>
 					<span class="clearfix"></span>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
 					<label for="check1" class="btn btn-primary disabled btn-sm"><strong>Audio:</strong></label>
@@ -203,6 +207,10 @@ if(sizeof($ffmpeg_output) == null ) {
 					<label for="check6" class="btn btn-primary btn-sm">
 					<input  class="form-control input-sm" type="radio" id="check6" name="radio" />Bassa</label>
 					</div>
+					<div class="form-group input-group input-group-sm col-xs-4">
+					<span class="input-group-addon">Bitrate</span>
+						<input type="text" id="bitrate" class="form-control input-sm" value="bitrate">
+						</div>
 					<div class="btn-group pull-right">
 					<button id="stream" class="btn btn-primary btn-sm btn-success">Start</button>
 					</div>
