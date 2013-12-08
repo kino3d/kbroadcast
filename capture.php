@@ -50,11 +50,12 @@ switch($encoder) {
 	case "pid":
 		$pid = null;
         $result = shell_exec(sprintf("ps -C bmdcapture | grep bmdcapture", $pid));
-        $pid = strstr($result," pts",true);    
+    //    print_r($result);
+        $pid = strstr($result," ?",true);    
 		if ($pid == ""){echo "stopped";}
 		else {			
 		echo "runned";
-		}
+		};
 		break;
 	case "start":
 		echo "starting streaming";

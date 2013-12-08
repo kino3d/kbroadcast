@@ -84,9 +84,9 @@ if(sizeof($ffmpeg_output) == null ) {
 				<small>
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
 					<label class="btn btn-primary btn-xs" >
-					<input class="form-control input-xs" type="radio" value="1" name="radio1" id="checks1">HDMI</label>
-					</div>
-					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
+					<input class="form-control input-xs" type="radio" value="1" name="radio1" id="checks1" checked="">HDMI</label>
+				<!--	</div>
+					<div id="radio1" class="btn-group form-group" data-toggle="buttons"> -->
 					<label class="btn btn-primary btn-xs">
 					<input class="form-control input-xs" type="radio" value="0" name="radio1" id="checks2" >SDI</label>
 						</div>
@@ -107,9 +107,13 @@ if(sizeof($ffmpeg_output) == null ) {
 					<option value="15">HD 720p 60 1280x720 60FPS</option>
 					</select>
 					</div>
-					<div class="form-group pull-right">
-					<input type="submit" value="capture" id="av_status" class="btn btn-default btn-sm" class="av_status">
+			
+					<div class="progress progress-striped active pull-right">
+					<div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:80px" >
+					<span id="av_status" class="av_status">Capture off</span>
 					</div>
+					</div>
+					
 					</small>
 					</form>
 					</div>
@@ -170,8 +174,8 @@ if(sizeof($ffmpeg_output) == null ) {
 		provider:'rtmp',
 		streamer:"rtmp://<?php echo $hostname;?>/myapp",
 		autostart: 'true',
-		stretching: 'scale',
-		controlbar: 'over',
+		stretching: 'fit',
+		controlbar: 'hide',
 		backgroundcolor: '000000',
 		icons:'true',
 		controls:'false',
@@ -185,40 +189,40 @@ if(sizeof($ffmpeg_output) == null ) {
 					<div class="panel-body">
 					<form role="form" >
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons" style="margin-bottom:3px">
-					<label for="check1" class="btn btn-primary disabled btn-sm"><strong>Video:</strong></label>
-					<label for="check1" class="btn btn-primary btn-sm">
+					<label for="check1" class="btn btn-primary disabled btn-xs"><strong>Video:</strong></label>
+					<label for="check1" class="btn btn-primary btn-xs">
 					<input class="form-control input-sm" type="radio" id="check1" name="radio" checked="checked" />Alta</label>
-					<label for="check2" class="btn btn-primary btn-sm">
+					<label for="check2" class="btn btn-primary btn-xs">
 					<input class="form-control input-sm" type="radio" id="check2" name="radio" />Media</label>
-					<label for="check3"  class="btn btn-primary btn-sm">
+					<label for="check3"  class="btn btn-primary btn-xs">
 					<input class="form-control input-sm" type="radio" id="check3" name="radio" />Bassa</label>
 					</div>
-					<div class="form-group input-group input-group-sm col-xs-4">
-					<span class="input-group-addon">Bitrate</span>
-						<input type="text" id="bitrate" class="form-control input-sm" value="bitrate">
-						</div>
+					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 23px; margin: 0px auto;">
+					<span class="input-group-addon"  style="height: 22px; padding: 0 4px; margin: 0;">Bitrate:</span>
+					<input type="text" id="bitrate" class="form-control input-sm" value="bitrate" style="height: 23px; padding: 0; margin: 0;" />
+					</div>
 					<span class="clearfix"></span>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
-					<label for="check1" class="btn btn-primary disabled btn-sm"><strong>Audio:</strong></label>
-					<label for="check4" class="btn btn-primary btn-sm">
+					<label for="check1" class="btn btn-primary disabled btn-xs"><strong>Audio:</strong></label>
+					<label for="check4" class="btn btn-primary btn-xs">
 					<input class="form-control input-sm" type="radio" id="check4" name="radio" checked="checked" />Alta</label>
-					<label for="check5" class="btn btn-primary btn-sm">
+					<label for="check5" class="btn btn-primary btn-xs">
 					<input class="form-control input-sm" type="radio" id="check5" name="radio" />Media</label>
-					<label for="check6" class="btn btn-primary btn-sm">
+					<label for="check6" class="btn btn-primary btn-xs">
 					<input  class="form-control input-sm" type="radio" id="check6" name="radio" />Bassa</label>
 					</div>
-					<div class="form-group input-group input-group-sm col-xs-4">
-					<span class="input-group-addon">Bitrate</span>
-						<input type="text" id="bitrate" class="form-control input-sm" value="bitrate">
-						</div>
+					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 23px; margin: 0px auto;">
+					<span class="input-group-addon" style="height: 22px; padding: 0 4px; margin: 0;">Bitrate:</span>
+					<input type="text" id="bitrate" class="form-control input-sm" value="bitrate" style="height: 23px; padding: 0 5px; margin: 0;" />
+					</div>
 					<div class="btn-group pull-right">
 					<button id="stream" class="btn btn-primary btn-sm btn-success">Start</button>
 					</div>
 					</form>
-					<div class="clearfix"></div><br>
+					<div class="clearfix"></div>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
 				
-					<button class="btn btn-default btn-xs" id="record">Registra</button>
+					<button class="btn btn-default btn-xs" id="record" style="witdh:50px;" value="Registra" data-toggle="button">Registra</button>
 					<button class="btn btn-default btn-xs" id="timer">00:00:00</button>
 					</div>			
 					</div>
@@ -236,9 +240,9 @@ if(sizeof($ffmpeg_output) == null ) {
 				<strong>Registrazioni</strong>
 				</div>
  					 <div class="panel-body">
- 					 	<button type="button" id="refresh" class="btn navbar-btn btn-sm btn-success navbar-right">Aggiorna <span class="glyphicon glyphicon-refresh text-success"></span></button>
+ 					 	<button type="button" id="refresh" class="btn navbar-btn btn-sm btn-success pull-right">Aggiorna <span class="glyphicon glyphicon-refresh text-success"></span></button>
  					 	<div class="clearfix"></div>
-							<div id="listfile" class="filem ">
+							<div id="listfile" class="filem">
 								<ul class="list-unstyled">
 									<li id="files" class="rows"></li>
 								</ul>

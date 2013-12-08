@@ -21,7 +21,7 @@ foreach ($resultlist as $fileName)
   	if(strtolower(substr($fileName, 0,5)) == 'total') {
   		     echo "<li id=\"video-$i\" class=\"rows\">" . ucfirst($fileName) . "</li>";
   		} else {
-     echo "<li id=\"video-$i\" class=\"rows\"><span class=\"glyphicon glyphicon-film\" style=\"display: inline-block;margin-right:4px;\"></span><a href=# class=\"fzilectrl\">$fileName</a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-trash\"></span></a></li>";
+     echo "<li id=\"video-$i\" class=\"rows\"><span class=\"glyphicon glyphicon-film\" style=\"display: inline-block;margin-right:4px;\"></span><a href=# class=\"fzilectrl\">$fileName</a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-trash\"></span></a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-download\"></span></a><a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-eye-open\"></span></a></li>";
     $i++;
    }
    }

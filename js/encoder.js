@@ -9,69 +9,44 @@ event.preventDefault();
 
 
 $(function() {
-$( "#record" ).button({
-text: true,
-label:"Registra",
-icons: {
-primary: "ui-icon-bullet red ui-corner-all"
-}
-}).css("width", "90px","background","red!important", "color","green")
-.click(function() {
-var options;
-if ( $( this ).text() === "Registra" ) {
-options = {
-label: "Stop Reg",
-icons: {
-primary: "ui-icon-stop"
-}
-};
-
+$( "#record" ).button().click(function() {
+if ( $("#record").text() === "Registra" ) {
 $.ajax({
   type: "GET",
   url: "/control/record/start?app=myapp&name=stream&rec=rec1",
   dataType: "script",
   success: function() {
-	$("#str_status").css("background-color","green");    
+	$("#record").text('Stop');    
     //alert("success");
  //   console.log();
   },
   error: function() {
  //   alert("error");
-    $("#str_status").css("background-color","red");   
+    $("#record").css("background-color","red").text('Stop');   
   }
 });
-} else {
-options = {
-label: "Registra",
-icons: {
-primary: "ui-icon-bullet"
-}
 };
-
+if ( $("#record").text() === "Stop" ) {
 $.ajax({
   type: "GET",
   url: "/control/record/stop?app=myapp&name=stream&rec=rec1",
   dataType: "script",
   success: function() {
-	$("#str_status").css("background-color","green");    
+	$("#record").text('Registra');    
     //alert("success");
  //   console.log();
   },
   error: function() {
  //   alert("error");
-    $("#str_status").css("background-color","red");   
+    $("#record").css("background-color","white").text('Registra');   
   }
 });
+};
 }
-$( this ).button( "option", options ).toggleClass("red");
+);
+
+return false;
 });
-
-// Start capture card 
-
-$("#av_status").button().click(function(){
-	$("#av_status").val("stop capture");	
-	});
-
 
 // Stream Button
 $( "#stream" ).button({
@@ -80,8 +55,7 @@ text:true //,
 // icons: {
 // primary: "ui-icon-stop"
 // }
-})
-.click(function() {
+}).click(function() {
 $( "#stream" ).button( "option", {
 label: "Stream",
 text:true //,
@@ -90,6 +64,7 @@ text:true //,
 // }
 }).addClass("red");
 });
+
 
 $( "#timer" ).button({
 text:true,
@@ -114,14 +89,15 @@ $.ajax({
 	}});
 });
 
-
-
-
  $("#filem").scroll();
  
 $("#sysm").scroll();
-return false;
-});
+
+// Start capture card not used
+// $("#av_status").button().click(function(){
+//	$("#av_status").val("stop capture");	
+//	});
+
 
 // Tabs
 
@@ -139,23 +115,55 @@ $.ajax({
   url: "update-rec.php?media=rec",
   dataType: "html",
   success: function(data) {
-	$("#listfile").html(data);  
+	$("#listfile").html(data).fade();  
  //	alert(resultlist);
   //	console.log(data)
 	}});
 // },3000);
 };
 
-$('#refresh').click(function(){
+$('#refresh').button().click(function(){
 $.ajax({
   type: "GET",
   url: "update-rec.php?media=rec",
   dataType: "html",
   success: function(data) {
-	$("#listfile").html(data);  
+	$("#listfile").html(data);
+	$('#refresh').button('reset');  
 	}});
 })
 })
+});
+
+
+
+$(function(){
+$.ajax({
+ type: "GET",
+  url: "capture.php",
+ dataType: "html",
+// contentType: "application/json; charset=utf-8",
+//  data: data,
+  success: function(data) {
+  	if (data === "stopped") {
+  		$.ajax({
+ 				type: "GET",
+  				url: "capture.php?encoder=avstart",
+ 				dataType: "html",
+ 				success: function(data) {
+				$("#av_status").val("Starting...");}});}
+		//	else
+		//	{  $("#str_status").addClass("").css("background-color","red").val("Attivo");  };
+	//jwplayer().play();   
+    //alert("success");
+//	console.log(data);
+  },
+  error: function() {
+ //   alert("error");
+    $("#av_status").addClass("").css("background-color","red").val("Off"); 
+    console.log();  
+  		}
+	});	
 });
 
 
@@ -168,20 +176,26 @@ $.ajax({
 //  data: data,
   success: function(data) {
   	if (data === "stopped") {
-	$("#str_status").addClass("").css("background-color","green", "color","white!important").val("Start");}
+	$("#av_status").text("Stopped");
+	$("#pbar").addClass("progress-bar-danger").removeClass("progress-bar-success");	
+	}
 	else
-	{  $("#str_status").addClass("").css("background-color","red").val("Stop");  }
+	{  $("#av_status").text("Capturing");
+		$("#pbar").addClass("progress-bar-success").removeClass("progress-bar-danger");	
+	}
 	//jwplayer().play();   
     //alert("success");
 //	console.log(data);
   },
   error: function() {
  //   alert("error");
-    $("#str_status").addClass("").css("background-color","red").val("Off"); 
-    console.log();  
+    $("#av_status").addClass("").css("background-color","red").val("Off"); 
+//    console.log();  
   }
 });
 },3000);
+
+
 
 $(function(){
 $.ajax({
