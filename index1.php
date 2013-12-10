@@ -203,11 +203,12 @@ if(sizeof($ffmpeg_output) == null ) {
 					<label class="btn btn-default btn-xs">
 					<input class="form-control input-sm" type="radio" name="radio" value="450" />Bassa</label>
 					-->
-					</div>
-					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 22px; margin: 0px auto;">
+					</div> 
+					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 22px; margin: 0px auto;"> 
 					<span class="input-group-addon"  style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span> 
 					<input type="text" id="video_bitrate" class="form-control input-sm" value="video_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
+				
 					<span class="clearfix"></span>
 					<div id="AudioB" class="btn-group pull-left audiob" data-toggle="buttons">
 				

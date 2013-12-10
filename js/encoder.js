@@ -293,7 +293,7 @@ $('#manuale').click(function () {
 //    $('#dhcp').html('Manuale');
 })});
 
-
+// Video Audio bitrate selection
 
 $(function(){
 $('.videob .btn').on('click', function() {
@@ -303,5 +303,12 @@ $('.videob .btn').on('click', function() {
 }); 
 });
 
+$(function(){
+$('.audiob .btn').on('click', function() {
+    // whenever a button is clicked, set the hidden helper
+    console.log($(this).val());
+    $("#audio_bitrate").val($(this).val());
+}); 
+});
 
 
