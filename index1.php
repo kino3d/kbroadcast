@@ -51,7 +51,7 @@ if(sizeof($ffmpeg_output) == null ) {
     <meta name="author" content="kino" >
     <link rel="shortcut icon" href="ico/favicon.png">
     <title>Encoder alpha 0.1</title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/encoder.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -187,38 +187,53 @@ if(sizeof($ffmpeg_output) == null ) {
 			<div class="panel panel-default">
 				<div class="panel-heading"><strong>Broadcast</strong></div>
 					<div class="panel-body">
-					<form role="form" >
-					<div id="radio" class="btn-group pull-left" data-toggle="buttons" style="margin-bottom:3px">
-					<label for="check1" class="btn btn-primary disabled btn-xs"><strong>Video:</strong></label>
-					<label for="check1" class="btn btn-primary btn-xs">
-					<input class="form-control input-sm" type="radio" id="check1" name="radio" checked="checked" />Alta</label>
-					<label for="check2" class="btn btn-primary btn-xs">
-					<input class="form-control input-sm" type="radio" id="check2" name="radio" />Media</label>
-					<label for="check3"  class="btn btn-primary btn-xs">
-					<input class="form-control input-sm" type="radio" id="check3" name="radio" />Bassa</label>
+			<!--	<form role="form" id="audio_video" > -->				
+					<div id="VideoB" class="btn-group pull-left videob" data-toggle="buttons" style="margin-bottom:3px">
+				
+				 	<button type="button" class="btn btn-default btn-primary btn-xs" disabled="">Video:</button>				
+					<button type="button" class="btn btn-default btn-xs" value="1200" data-toggle="button">Alta</button>
+					<button type="button" class="btn btn-default btn-xs" value="800" data-toggle="button">Media</button>
+					<button type="button" class="btn btn-default btn-xs" value="450" data-toggle="button">Bassa</button>
+				<!--	
+					<label class="btn btn-primary btn-xs"><strong>Video:</strong></label> 
+					<label  class="btn btn-default btn-xs">
+					<input class="form-control input-sm" type="radio" name="radio" value="1200" />Alta</label>
+					<label class="btn btn-default btn-xs">
+					<input class="form-control" type="radio" name="radio" value="800" />Media</label>
+					<label class="btn btn-default btn-xs">
+					<input class="form-control input-sm" type="radio" name="radio" value="450" />Bassa</label>
+					-->
 					</div>
-					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 23px; margin: 0px auto;">
-					<span class="input-group-addon"  style="height: 22px; padding: 0 4px; margin: 0;">Bitrate:</span>
-					<input type="text" id="bitrate" class="form-control input-sm" value="bitrate" style="height: 23px; padding: 0; margin: 0;" />
+					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 22px; margin: 0px auto;">
+					<span class="input-group-addon"  style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span> 
+					<input type="text" id="video_bitrate" class="form-control input-sm" value="video_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
 					<span class="clearfix"></span>
-					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
+					<div id="AudioB" class="btn-group pull-left audiob" data-toggle="buttons">
+				
+					<button type="button" class="btn btn-default btn-primary btn-xs" disabled="">Audio:</button>				
+					<button type="button" class="btn btn-default btn-xs" value="128" data-toggle="button">Alta</button>
+					<button type="button" class="btn btn-default btn-xs" value="96" data-toggle="button">Media</button>
+					<button type="button" class="btn btn-default btn-xs" value="64" data-toggle="button">Bassa</button>
+				
+				<!--
 					<label for="check1" class="btn btn-primary disabled btn-xs"><strong>Audio:</strong></label>
-					<label for="check4" class="btn btn-primary btn-xs">
-					<input class="form-control input-sm" type="radio" id="check4" name="radio" checked="checked" />Alta</label>
-					<label for="check5" class="btn btn-primary btn-xs">
-					<input class="form-control input-sm" type="radio" id="check5" name="radio" />Media</label>
-					<label for="check6" class="btn btn-primary btn-xs">
-					<input  class="form-control input-sm" type="radio" id="check6" name="radio" />Bassa</label>
+					<label for="check4" class="btn btn-default btn-xs">
+					<input class="form-control input-sm" type="radio" name="radio" checked="checked" value="128" /> Alta</label>
+					<label for="check5" class="btn btn-default btn-xs">
+					<input class="form-control input-sm" type="radio" name="radio" value="96" /> Media</label>
+					<label for="check6" class="btn btn-default btn-xs">
+					<input  class="form-control input-sm" type="radio" name="radio" value="64" /> Bassa</label>
+					-->
 					</div>
-					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 23px; margin: 0px auto;">
-					<span class="input-group-addon" style="height: 22px; padding: 0 4px; margin: 0;">Bitrate:</span>
-					<input type="text" id="bitrate" class="form-control input-sm" value="bitrate" style="height: 23px; padding: 0 5px; margin: 0;" />
+					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 22px; margin: 0px auto;">
+					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span>
+					<input type="text" id="audio_bitrate" class="form-control input-sm" value="audio_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
 					<div class="btn-group pull-right">
 					<button id="stream" class="btn btn-primary btn-sm btn-success">Start</button>
 					</div>
-					</form>
+				<!--	</form> -->
 					<div class="clearfix"></div>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
 				

@@ -135,8 +135,6 @@ $.ajax({
 })
 });
 
-
-
 $(function(){
 $.ajax({
  type: "GET",
@@ -283,7 +281,7 @@ $(function(){
 $('#dhcp').click(function () {
 //	console.log("help");
 
-    $('#p5p1 :input').prop("disabled", true);
+    $('.p5p1 :input').prop("disabled", true);
 //    $('#dhcp').html('Manuale');
 })});					
 
@@ -291,11 +289,19 @@ $(function(){
 $('#manuale').click(function () {
 //	console.log("help");
 
-    $('#p5p1 :input').prop("disabled", false);
+    $('.p5p1 :input').prop("disabled", false);
 //    $('#dhcp').html('Manuale');
 })});
 
 
+
+$(function(){
+$('.videob .btn').on('click', function() {
+    // whenever a button is clicked, set the hidden helper
+    console.log($(this).val());
+    $("#video_bitrate").val($(this).val());
+}); 
+});
 
 
 
