@@ -204,9 +204,26 @@ if(sizeof($ffmpeg_output) == null ) {
 					<input class="form-control input-sm" type="radio" name="radio" value="450" />Bassa</label>
 					-->
 					</div> 
-					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 22px; margin: 0px auto;"> 
+					<div class="form-group input-group input-group-sm col-xs-2" style="width: 120px; height: 22px; margin: 0px auto;"> 
 					<span class="input-group-addon"  style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span> 
 					<input type="text" id="video_bitrate" class="form-control input-sm" value="video_b" style="height: 22px; padding: 0 5px; margin: 0;" />
+					</div>
+					<!-- Select resolution  -->
+					<div class="input-group" style="width: 180px;height: 22px; margin: 0px;">
+					<div class="input-group-btn">
+        			<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">Dim<span class="caret"></span></button>
+				        <ul class="dropdown-menu small">
+          						<li><a href="#"><small>1280X720 720P</small></a></li>
+          						<li><a href="#"><small>960x540 540P</small></a></li>
+          						<li><a href="#"><small>720X404</small></a></li>
+          						<li><a href="#"><small>640x360</small></a></li>
+        				</ul>	
+      				</div>
+					<span class="input-group-addon small" style="height: 20px; padding: 0 4px; margin: 0;">X:</span> 
+					<input type="text" id="resx" class="form-control input-sm" value="X" style="height: 22px; padding: 0 5px; margin: 0;" />
+					<span class="input-group-addon small" style="height: 20px; padding: 0 4px; margin: 0;">Y:</span>
+					<input type="text" id="resy" class="form-control input-sm" value="Y" style="height: 22px; padding: 0 5px; margin: 0;" />
+					
 					</div>
 				
 					<span class="clearfix"></span>
@@ -227,10 +244,11 @@ if(sizeof($ffmpeg_output) == null ) {
 					<input  class="form-control input-sm" type="radio" name="radio" value="64" /> Bassa</label>
 					-->
 					</div>
-					<div class="form-group input-group input-group-sm col-xs-4" style="width: 140px; height: 22px; margin: 0px auto;">
+					<div class="form-group input-group input-group-sm col-xs-3" style="width: 120px; height: 22px; margin: 0px auto;">
 					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span>
 					<input type="text" id="audio_bitrate" class="form-control input-sm" value="audio_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
+					<div class="clearfix"></div>
 					<div class="btn-group pull-right">
 					<button id="stream" class="btn btn-primary btn-sm btn-success">Start</button>
 					</div>
