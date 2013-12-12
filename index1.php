@@ -79,15 +79,16 @@ if(sizeof($ffmpeg_output) == null ) {
 	<div class="tab-content">
 			<div class="tab-pane panel-body active" id="Tab1">
       <!-- Begin page content -->
-        	<div class="well well-sm">
-				<form id="source" class="form-inline">
-				<small>
+      <!--   	<div class="well well-sm"> -->
+      <small>
+	<!--		<form id="source" class="form-inline">
+				
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
 					<label class="btn btn-primary btn-xs" >
 					<input class="form-control input-xs" type="radio" value="1" name="radio1" id="checks1" checked="">HDMI</label>
 				<!--	</div>
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons"> -->
-					<label class="btn btn-primary btn-xs">
+			<!--		<label class="btn btn-primary btn-xs">
 					<input class="form-control input-xs" type="radio" value="0" name="radio1" id="checks2" >SDI</label>
 						</div>
 						<div class="form-group">
@@ -107,7 +108,7 @@ if(sizeof($ffmpeg_output) == null ) {
 					<option value="15">HD 720p 60 1280x720 60FPS</option>
 					</select>
 					</div>
-			
+			-->
 					<div class="progress progress-striped active pull-right">
 					<div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:80px" >
 					<span id="av_status" class="av_status">Capture off</span>
@@ -115,8 +116,8 @@ if(sizeof($ffmpeg_output) == null ) {
 					</div>
 					
 					</small>
-					</form>
-					</div>
+				<!--	</form>  
+					</div> -->
 					<div class="clearfix"></div>
 				
         	<div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
@@ -219,9 +220,9 @@ if(sizeof($ffmpeg_output) == null ) {
           						<li><a href="#"><small>640x360</small></a></li>
         				</ul>	
       				</div>
-					<span class="input-group-addon small" style="height: 20px; padding: 0 4px; margin: 0;">X:</span> 
+					<span class="input-group-addon small" style="height: 20px; padding: 0 4px; margin: 0;"><small>X:</small></span> 
 					<input type="text" id="resx" class="form-control input-sm" value="X" style="height: 22px; padding: 0 5px; margin: 0;" />
-					<span class="input-group-addon small" style="height: 20px; padding: 0 4px; margin: 0;">Y:</span>
+					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;"><small>Y:</small></span>
 					<input type="text" id="resy" class="form-control input-sm" value="Y" style="height: 22px; padding: 0 5px; margin: 0;" />
 					
 					</div>
