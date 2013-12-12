@@ -210,7 +210,7 @@ if(sizeof($ffmpeg_output) == null ) {
 					<input type="text" id="video_bitrate" class="form-control input-sm" value="video_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
 					<!-- Select resolution  -->
-					<div class="input-group" style="width: 180px;height: 22px; margin: 0px;">
+					<div class="input-group" style="width: 180px;height: 22px; margin: 0px;padding:2px;">
 					<div class="input-group-btn">
         			<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">Dim<span class="caret"></span></button>
 				        <ul class="dropdown-menu small">
@@ -220,10 +220,10 @@ if(sizeof($ffmpeg_output) == null ) {
           						<li><a href="#"><small>640x360</small></a></li>
         				</ul>	
       				</div>
-					<span class="input-group-addon small" style="height: 20px; padding: 0 4px; margin: 0;"><small>X:</small></span> 
-					<input type="text" id="resx" class="form-control input-sm" value="X" style="height: 22px; padding: 0 5px; margin: 0;" />
-					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;"><small>Y:</small></span>
-					<input type="text" id="resy" class="form-control input-sm" value="Y" style="height: 22px; padding: 0 5px; margin: 0;" />
+					<span class="input-group-addon" style="height:18px;padding: 0 1px; margin: 0;"><small>X:</small></span> 
+					<input type="text" id="resx" class="form-control input-sm" value="X" style="height:22px;padding: 0 4px; margin: 0px;" />
+					<span class="input-group-addon" style="height:20px;padding: 0 2px; margin: 0;"><small>Y:</small></span>
+					<input type="text" id="resy" class="form-control input-sm" value="Y" style="height:22px;padding: 0 4px; margin: 0px;" />
 					
 					</div>
 				
