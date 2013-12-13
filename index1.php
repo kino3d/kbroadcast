@@ -214,36 +214,23 @@ if(sizeof($ffmpeg_output) == null ) {
 					<div class="input-group-btn">
         			<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">Dim<span class="caret"></span></button>
 				        <ul class="dropdown-menu small">
-          						<li><a href="#"><small>1280X720 720P</small></a></li>
-          						<li><a href="#"><small>960x540 540P</small></a></li>
-          						<li><a href="#"><small>720X404</small></a></li>
-          						<li><a href="#"><small>640x360</small></a></li>
+          						<li><a class="res" href="#"><small>1280x720</small></a></li>
+          						<li><a class="res" href="#"><small>960x540</small></a></li>
+          						<li><a class="res" href="#"><small>720x404</small></a></li>
+          						<li><a class="res" href="#"><small>640x360</small></a></li>
         				</ul>	
       				</div>
 					<span class="input-group-addon" style="height:18px;padding: 0 1px; margin: 0;"><small>X:</small></span> 
 					<input type="text" id="resx" class="form-control input-sm" value="X" style="height:22px;padding: 0 4px; margin: 0px;" />
 					<span class="input-group-addon" style="height:20px;padding: 0 2px; margin: 0;"><small>Y:</small></span>
 					<input type="text" id="resy" class="form-control input-sm" value="Y" style="height:22px;padding: 0 4px; margin: 0px;" />
-					
 					</div>
-				
 					<span class="clearfix"></span>
 					<div id="AudioB" class="btn-group pull-left audiob" data-toggle="buttons">
-				
 					<button type="button" class="btn btn-default btn-primary btn-xs" disabled="">Audio:</button>				
 					<button type="button" class="btn btn-default btn-xs" value="128" data-toggle="button">Alta</button>
 					<button type="button" class="btn btn-default btn-xs" value="96" data-toggle="button">Media</button>
 					<button type="button" class="btn btn-default btn-xs" value="64" data-toggle="button">Bassa</button>
-				
-				<!--
-					<label for="check1" class="btn btn-primary disabled btn-xs"><strong>Audio:</strong></label>
-					<label for="check4" class="btn btn-default btn-xs">
-					<input class="form-control input-sm" type="radio" name="radio" checked="checked" value="128" /> Alta</label>
-					<label for="check5" class="btn btn-default btn-xs">
-					<input class="form-control input-sm" type="radio" name="radio" value="96" /> Media</label>
-					<label for="check6" class="btn btn-default btn-xs">
-					<input  class="form-control input-sm" type="radio" name="radio" value="64" /> Bassa</label>
-					-->
 					</div>
 					<div class="form-group input-group input-group-sm col-xs-3" style="width: 120px; height: 22px; margin: 0px auto;">
 					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span>
@@ -256,7 +243,6 @@ if(sizeof($ffmpeg_output) == null ) {
 				<!--	</form> -->
 					<div class="clearfix"></div>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
-				
 					<button class="btn btn-default btn-xs" id="record" style="witdh:50px;" value="Registra" data-toggle="button">Registra</button>
 					<button class="btn btn-default btn-xs" id="timer">00:00:00</button>
 					</div>			
@@ -368,7 +354,6 @@ if(sizeof($ffmpeg_output) == null ) {
 							</div>
 							<button type="submit" class="btn btn-default btn-sm">Genera</button>
 							<button type="submit" class="btn btn-default btn-sm btn-info" disabled>Imposta</button>
-							
 				</form>
 			 </div>
     	</div>

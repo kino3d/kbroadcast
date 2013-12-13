@@ -312,3 +312,15 @@ $('.audiob .btn').on('click', function() {
 });
 
 
+$(function(){
+$('.res').on('click', function() {
+    // whenever a button is clicked, set the hidden helper
+    console.log($(this).val());
+    var res = $(this).text();
+    var  resxy = res.split('x');
+    $("#resx").val(resxy[0]);
+    $("#resy").val(resxy[1]);
+}); 
+});
+
+
