@@ -356,18 +356,19 @@ if(sizeof($ffmpeg_output) == null ) {
 						<label for="cdn"><strong id="eth0">CDN</strong> <small class="text-info">* solo admin</small></label>
 							<div class="btn-group form-group input-group input-group-sm col-md-12" >
 							<span class="input-group-addon text-info">Server rtmp</span>
-							<input type="text" id="s_rtmp" class="form-control input-sm" value="wowza1.streamtech.it" disabled>
+							<input type="text" id="s_rtmp" class="form-control input-sm" value="wowza1.top-ix.org" disabled>
 					<!--		<span class="input-group-addon">Broadcast</span>
 						<input type="text" id="0broadcast" class="form-control input-sm" value="Boadcast"> -->
 						<span class="input-group-addon text-info">Nome app</span>
-						<input type="text" id="app_name" class="form-control input-sm" value="streamtech" disabled>
+						<input type="text" id="app_name" class="form-control input-sm" value="toplive" disabled>
 							</div>
-							<div class="btn-group form-group input-group input-group-sm col-md-8" >
+							<div class="btn-group form-group input-group input-group-sm col-sm-8" >
 							<span class="input-group-addon">Nome flusso</span>
 							<input type="text" id="stream_name" class="form-control input-sm" value="">
 							</div>
 							<button type="submit" class="btn btn-default btn-sm">Genera</button>
 							<button type="submit" class="btn btn-default btn-sm btn-info" disabled>Imposta</button>
+							
 				</form>
 			 </div>
     	</div>
