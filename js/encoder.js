@@ -178,7 +178,7 @@ $.ajax({
 	$("#pbar").addClass("progress-bar-danger").removeClass("progress-bar-success");	
 	}
 	else
-	{  $("#av_status").text("Capturing");
+	{  $("#av_status").text("Cattura: 1920x108050i 25fps");
 		$("#pbar").addClass("progress-bar-success").removeClass("progress-bar-danger");	
 	}
 	//jwplayer().play();   

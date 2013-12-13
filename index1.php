@@ -80,7 +80,7 @@ if(sizeof($ffmpeg_output) == null ) {
 			<div class="tab-pane panel-body active" id="Tab1">
       <!-- Begin page content -->
       <!--   	<div class="well well-sm"> -->
-      <small>
+      
 	<!--		<form id="source" class="form-inline">
 				
 					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
@@ -109,20 +109,18 @@ if(sizeof($ffmpeg_output) == null ) {
 					</select>
 					</div>
 			-->
-					<div class="progress progress-striped active pull-right">
-					<div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:80px" >
-					<span id="av_status" class="av_status">Capture off</span>
+					
+					<div class="progress progress-striped active" style="width:100%;">
+					<div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%;">
+					<span id="av_status" class="av_status">Cattura...</span>
 					</div>
 					</div>
 					
-					</small>
 				<!--	</form>  
 					</div> -->
 					<div class="clearfix"></div>
-				
-        	<div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
-        	
-        <div class="clearfix"></div>
+        				<div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
+        			<div class="clearfix"></div>
         <br>
  <!--
 <script type='text/javascript'>
