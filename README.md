@@ -11,5 +11,6 @@ Requirements
 - gstreamer0.10 all plugins (not now).
 - gstd git version (not now).
 
+- Read [system](system) to Linux setup
 
 kino  

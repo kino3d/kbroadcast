@@ -242,7 +242,7 @@ if(sizeof($ffmpeg_output) == null ) {
 					<div class="clearfix"></div>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
 					<button class="btn btn-default btn-xs" id="record" style="witdh:50px;" value="Registra" data-toggle="button">Registra</button>
-					<button class="btn btn-default btn-xs" id="timer">00:00:00</button>
+					<button class="btn btn-default btn-xs" name="timetextarea" value="00:00"name="timetextarea" value="00:00" id="timer">00:00</button>
 					</div>			
 					</div>
 					</div>
