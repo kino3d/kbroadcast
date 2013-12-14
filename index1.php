@@ -234,10 +234,15 @@ if(sizeof($ffmpeg_output) == null ) {
 					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span>
 					<input type="text" id="audio_bitrate" class="form-control input-sm" value="audio_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
+
 					<div class="clearfix"></div>
+					<div style="margin:5px;padding:0px;font-weight:bold;border-bottom:1px solid #dfdfdf;width:300px;">
+					<small >Stream info: <span id="st_info"></span></small>					
+					</div>					
 					<div class="btn-group pull-right">
-					<button id="stream" class="btn btn-primary btn-sm btn-success">Start</button>
+					<button id="stream" class="btn btn-sm btn-success">Start</button>
 					</div>
+					
 				<!--	</form> -->
 					<div class="clearfix"></div>
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">

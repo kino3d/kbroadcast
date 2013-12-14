@@ -414,9 +414,21 @@ $('.res').on('click', function() {
     var  resxy = res.split('x');
     $("#resx").val(resxy[0]);
     $("#resy").val(resxy[1]);
+    
 }); 
 });
 
 
-
+$(function(){
+$('#stream').on('click', function() {
+    // whenever a button is clicked, set the hidden helper
+   // console.log($(this).val());
+    var resx = $("#resx").val();
+    var  resy = $("#resy").val();
+    var  audio_b = $("#audio_bitrate").val();
+    var  video_b = $("#video_bitrate").val();
+    $("#st_info").text( resx + "x" + resy + " V: " + video_b + "Kbps A: " + audio_b + "Kbps" );
+	console.log(resx + "x" + resy + " V: " + video_b + "Kbps A: " + audio_b + "Kbps" );
+}); 
+});
  
