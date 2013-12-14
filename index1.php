@@ -79,37 +79,6 @@ if(sizeof($ffmpeg_output) == null ) {
 	<div class="tab-content">
 			<div class="tab-pane panel-body active" id="Tab1">
       <!-- Begin page content -->
-      <!--   	<div class="well well-sm"> -->
-      
-	<!--		<form id="source" class="form-inline">
-				
-					<div id="radio1" class="btn-group form-group" data-toggle="buttons">
-					<label class="btn btn-primary btn-xs" >
-					<input class="form-control input-xs" type="radio" value="1" name="radio1" id="checks1" checked="">HDMI</label>
-				<!--	</div>
-					<div id="radio1" class="btn-group form-group" data-toggle="buttons"> -->
-			<!--		<label class="btn btn-primary btn-xs">
-					<input class="form-control input-xs" type="radio" value="0" name="radio1" id="checks2" >SDI</label>
-						</div>
-						<div class="form-group">
-					<select id="select" class="form-control input-sm">
-					<option value="2">PAL 720x576 25FPS</option>
-					<option value="4">PAL Progressive 720x576 50FPS</option>
-					<option value="5">HD 1080p 23.98 1920x1080 23.976FPS</option>
-					<option value="6">HD 1080p 24 1920x1080 24FPS</option>
-					<option value="7" selected="selected">HD 1080p 25 1920x1080 25FPS</option>
-					<option value="8">HD 1080p 29.97 1920x1080 29.97FPS</option>
-					<option value="9">HD 1080p 30 1920x1080 30FPS</option>
-					<option value="10">HD 1080i 50 1920x1080 25FPS</option>
-					<option value="11">HD 1080i 59.94 1920x1080 29.97FPS</option>
-					<option value="12">HD 1080i 60 1920x1080 30FPS</option>
-					<option value="13">HD 720p 50 1280x720 50FPS</option>
-					<option value="14">HD 720p 59.94 1280x720 59.9401FPS</option>
-					<option value="15">HD 720p 60 1280x720 60FPS</option>
-					</select>
-					</div>
-			-->
-					
 					<div class="progress progress-striped active" style="width:100%;">
 					<div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%;">
 					<span id="av_status" class="av_status">Cattura...</span>
@@ -122,39 +91,6 @@ if(sizeof($ffmpeg_output) == null ) {
         				<div  id='mediaspace' class="mediaspace" name='mediaspace'></div>
         			<div class="clearfix"></div>
         <br>
- <!--
-<script type='text/javascript'>
-	jwplayer('mediaspace').setup({
-		modes: [
-		{type:"flash",src:"https://eventilive.top-ix.org/player/jw/player.swf"},
-	{ type:"html5",
-	config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8",
-	provider:"video"}}
-					],
-		'file': 'stream',
-	/*  'image':'../plug-small1-70.png', */
-	rtmp:{subscribe:false,
-	bufferlength: 0},
-		'frontcolor': 'ffffff',
-		'lightcolor': 'cc9900',
-		'screencolor': 'ffffff',
-		'backcolor':'434343',
-		'provider':'rtmp',
-		'streamer':'rtmp://<?php echo $hostname;?>/myapp/',
-		'autostart': 'true',
-		'stretching': 'scale',
-		'controlbar': 'over',
-		'backgroundcolor': '000000',
-		'width': '416',
-		'height': '240',
-		'icons':'none',
-		'controls':false,
-		"plugins": {
-		// "gapro-2": {}
-	}
-		});
-</script>
- -->
  <script type='text/javascript'>
 	jwplayer('mediaspace').setup({
 		modes: [
@@ -187,21 +123,11 @@ if(sizeof($ffmpeg_output) == null ) {
 				<div class="panel-heading"><strong>Broadcast</strong></div>
 					<div class="panel-body">
 			<!--	<form role="form" id="audio_video" > -->				
-					<div id="VideoB" class="btn-group pull-left videob" data-toggle="buttons" style="margin-bottom:3px">
-				
+					<div id="VideoB" class="btn-group pull-left videob" data-toggle="buttons" style="margin-bottom:3px">	
 				 	<button type="button" class="btn btn-default btn-primary btn-xs" disabled="">Video:</button>				
 					<button type="button" class="btn btn-default btn-xs" value="1200" data-toggle="button">Alta</button>
 					<button type="button" class="btn btn-default btn-xs" value="800" data-toggle="button">Media</button>
 					<button type="button" class="btn btn-default btn-xs" value="450" data-toggle="button">Bassa</button>
-				<!--	
-					<label class="btn btn-primary btn-xs"><strong>Video:</strong></label> 
-					<label  class="btn btn-default btn-xs">
-					<input class="form-control input-sm" type="radio" name="radio" value="1200" />Alta</label>
-					<label class="btn btn-default btn-xs">
-					<input class="form-control" type="radio" name="radio" value="800" />Media</label>
-					<label class="btn btn-default btn-xs">
-					<input class="form-control input-sm" type="radio" name="radio" value="450" />Bassa</label>
-					-->
 					</div> 
 					<div class="form-group input-group input-group-sm col-xs-2" style="width: 120px; height: 22px; margin: 0px auto;"> 
 					<span class="input-group-addon"  style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span> 
