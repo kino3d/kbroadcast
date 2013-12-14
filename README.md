@@ -11,6 +11,6 @@ Requirements
 - gstreamer0.10 all plugins (not now).
 - gstd git version (not now).
 
-- Read [system](system) to Linux setup
+- Read [system](https://bitbucket.org/yaki/t-broadcaster/src/fc7b1bfe1cda9a2a38937df487fc9c99eccfdd62/system/README.md?at=master) to Linux setup
 
 kino  
