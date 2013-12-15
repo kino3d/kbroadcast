@@ -161,7 +161,7 @@ if(sizeof($ffmpeg_output) == null ) {
 					<input type="text" id="audio_bitrate" class="form-control input-sm" value="audio_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 						
 					</div>
-					<span class="label label-success pull-left col-xs-4" style="width:189px;margin:0px 0px;padding:5px;font-weight:bold;text-align:left;" >Stream info: <span id="st_info"></span></span>
+					<span class="label label-success pull-left col-xs-4" style="width:189px;margin:1px 0px;padding:5px;font-weight:bold;text-align:left;" >Stream info: <span id="st_info"></span></span>
 					<div class="clearfix"></div>
 					<hr>
 				<!--	<div style="margin:5px;padding:0px;font-weight:bold;border-bottom:1px solid #dfdfdf;width:300px;">
