@@ -134,20 +134,20 @@ if(sizeof($ffmpeg_output) == null ) {
 					<input type="text" id="video_bitrate" class="form-control input-sm" value="video_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 					</div>
 					<!-- Select resolution  -->
-					<div class="input-group" style="width: 180px;height: 22px; margin: 0px;padding:2px;">
+					<div class="input-group" style="">
 					<div class="input-group-btn">
-        			<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">Dim<span class="caret"></span></button>
-				        <ul class="dropdown-menu small">
+        			<button type="button" class="btn btn-default btn-xs dropdown-toggle" style="height:22px;" data-toggle="dropdown">Dim<span class="caret"></span></button>
+				        <ul class="dropdown-menu">
           						<li><a class="res" href="#"><small>1280x720</small></a></li>
           						<li><a class="res" href="#"><small>960x540</small></a></li>
           						<li><a class="res" href="#"><small>720x404</small></a></li>
           						<li><a class="res" href="#"><small>640x360</small></a></li>
         				</ul>	
       				</div>
-					<span class="input-group-addon" style="height:18px;padding: 0 1px; margin: 0;"><small>X:</small></span> 
-					<input type="text" id="resx" class="form-control input-sm" value="X" style="height:22px;padding: 0 4px; margin: 0px;" />
-					<span class="input-group-addon" style="height:20px;padding: 0 2px; margin: 0;"><small>Y:</small></span>
-					<input type="text" id="resy" class="form-control input-sm" value="Y" style="height:22px;padding: 0 4px; margin: 0px;" />
+					<span class="input-group-addon" style="padding:2px ;margin:0px;"><small>X:</small></span> 
+					<input type="text" id="resx" class="form-control  input-sm" value="X" style="height:22px;padding:2px;" />
+					<span class="input-group-addon" style="padding:2px;margin:0px;"><small>Y:</small></span>
+					<input type="text" id="resy" class="form-control  input-sm" value="Y" style="height:22px;padding:2px;" />
 					</div>
 					<span class="clearfix"></span>
 					<div id="AudioB" class="btn-group pull-left audiob" data-toggle="buttons">
@@ -159,22 +159,26 @@ if(sizeof($ffmpeg_output) == null ) {
 					<div class="form-group input-group input-group-sm col-xs-3" style="width: 120px; height: 22px; margin: 0px auto;">
 					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span>
 					<input type="text" id="audio_bitrate" class="form-control input-sm" value="audio_b" style="height: 22px; padding: 0 5px; margin: 0;" />
+						
 					</div>
-
+					<span class="label label-success pull-left col-xs-4" style="width:189px;margin:0px 0px;padding:5px;font-weight:bold;text-align:left;" >Stream info: <span id="st_info"></span></span>
 					<div class="clearfix"></div>
-					<div style="margin:5px;padding:0px;font-weight:bold;border-bottom:1px solid #dfdfdf;width:300px;">
+					<hr>
+				<!--	<div style="margin:5px;padding:0px;font-weight:bold;border-bottom:1px solid #dfdfdf;width:300px;">
 					<small >Stream info: <span id="st_info"></span></small>					
-					</div>					
+					</div> -->					
 					<div class="btn-group pull-right">
 					<button id="stream" class="btn btn-sm btn-success">Start</button>
 					</div>
 					
 				<!--	</form> -->
-					<div class="clearfix"></div>
+				<!--	<div class="clearfix"></div> -->
+					<form name="chronoForm">
 					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
-					<button class="btn btn-default btn-xs" id="record" style="witdh:50px;" value="Registra" data-toggle="button">Registra</button>
-					<button class="btn btn-default btn-xs" name="timetextarea" value="00:00"name="timetextarea" value="00:00" id="timer">00:00</button>
-					</div>			
+					<button class="btn btn-default btn-xs" name="startstop" id="record" style="witdh:50px;" value="Registra" data-toggle="button">Registra</button>
+					<button class="btn btn-default btn-xs" id="chronotime">0:00:00</button>
+					</div>
+					</form>			
 					</div>
 					</div>
       		</div>

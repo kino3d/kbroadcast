@@ -1,92 +1,61 @@
 // JS Chronometer by emanueleferonato.com
 
-var timercount = 0;
-var timestart  = null;
-
-function showtimer() {
-	if(timercount) {
-		clearTimeout(timercount);
-		clockID = 0;
+var startTime = 0
+var start = 0
+var end = 0
+var diff = 0
+var timerID = 0
+function chrono(){
+	end = new Date()
+	diff = end - start
+	diff = new Date(diff)
+	var msec = diff.getMilliseconds()
+	var sec = diff.getSeconds()
+	var min = diff.getMinutes()
+	var hr = diff.getHours()-1
+	if (min < 10){
+		min = "0" + min
 	}
-	if(!timestart){
-		timestart = new Date();
+	if (sec < 10){
+		sec = "0" + sec
 	}
-	var timeend = new Date();
-	var timedifference = timeend.getTime() - timestart.getTime();
-	timeend.setTime(timedifference);
-	var minutes_passed = timeend.getMinutes();
-	if(minutes_passed < 10){
-		minutes_passed = "0" + minutes_passed;
+	if(msec < 10){
+		msec = "00" +msec
 	}
-	var seconds_passed = timeend.getSeconds();
-	if(seconds_passed < 10){
-		seconds_passed = "0" + seconds_passed;
+	else if(msec < 100){
+		msec = "0" +msec
 	}
-	document.timeform.timetextarea.value = minutes_passed + ":" + seconds_passed;
-	timercount = setTimeout("showtimer()", 1000);
+	document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec // + ":" + msec
+	timerID = setTimeout("chrono()", 10)
 }
-
-function sw_start(){
-	if(!timercount){
-	timestart   = new Date();
-	document.timeform.timetextarea.value = "00:00";
-	document.timeform.laptime.value = "";
-	timercount  = setTimeout("showtimer()", 1000);
-	}
-	else{
-	var timeend = new Date();
-		var timedifference = timeend.getTime() - timestart.getTime();
-		timeend.setTime(timedifference);
-		var minutes_passed = timeend.getMinutes();
-		if(minutes_passed < 10){
-			minutes_passed = "0" + minutes_passed;
-		}
-		var seconds_passed = timeend.getSeconds();
-		if(seconds_passed < 10){
-			seconds_passed = "0" + seconds_passed;
-		}
-		var milliseconds_passed = timeend.getMilliseconds();
-		if(milliseconds_passed < 10){
-			milliseconds_passed = "00" + milliseconds_passed;
-		}
-		else if(milliseconds_passed < 100){
-			milliseconds_passed = "0" + milliseconds_passed;
-		}
-		document.timeform.laptime.value = minutes_passed + ":" + seconds_passed + "." + milliseconds_passed;
-	}
+function chronoStart(){
+	document.chronoForm.startstop.value = "stop!"
+	document.chronoForm.startstop.onclick = chronoStop
+	document.chronoForm.reset.onclick = chronoReset
+	start = new Date()
+	chrono()
 }
-
-function Stop() {
-	if(timercount) {
-		clearTimeout(timercount);
-		timercount  = 0;
-		var timeend = new Date();
-		var timedifference = timeend.getTime() - timestart.getTime();
-		timeend.setTime(timedifference);
-		var minutes_passed = timeend.getMinutes();
-		if(minutes_passed < 10){
-			minutes_passed = "0" + minutes_passed;
-		}
-		var seconds_passed = timeend.getSeconds();
-		if(seconds_passed < 10){
-			seconds_passed = "0" + seconds_passed;
-		}
-		var milliseconds_passed = timeend.getMilliseconds();
-		if(milliseconds_passed < 10){
-			milliseconds_passed = "00" + milliseconds_passed;
-		}
-		else if(milliseconds_passed < 100){
-			milliseconds_passed = "0" + milliseconds_passed;
-		}
-		document.timeform.timetextarea.value = minutes_passed + ":" + seconds_passed + "." + milliseconds_passed;
-	}
-	timestart = null;
+function chronoContinue(){
+	document.chronoForm.startstop.value = "stop!"
+	document.chronoForm.startstop.onclick = chronoStop
+	document.chronoForm.reset.onclick = chronoReset
+	start = new Date()-diff
+	start = new Date(start)
+	chrono()
 }
-
-function Reset() {
-	timestart = null;
-	document.timeform.timetextarea.value = "00:00";
-	document.timeform.laptime.value = "";
+function chronoReset(){
+	document.getElementById("chronotime").innerHTML = "0:00:00"
+	start = new Date()
+}
+function chronoStopReset(){
+	document.getElementById("chronotime").innerHTML = "0:00:00"
+	document.chronoForm.startstop.onclick = chronoStart
+}
+function chronoStop(){
+	document.chronoForm.startstop.value = "start!"
+	document.chronoForm.startstop.onclick = chronoContinue
+	document.chronoForm.reset.onclick = chronoStopReset
+	clearTimeout(timerID)
 }
 
 
@@ -108,13 +77,14 @@ $.ajax({
   dataType: "script",
   success: function() {
 	$("#record").text('Stop');
-	sw_start();   
+	chronoStart();  
     //alert("success");
  //   console.log();
   },
   error: function() {
  //   alert("error");
-    $("#record").css("background-color","red").text('Stop');   
+    $("#record").css("background-color","red").text('Stop');
+    chronoStart();     
   }
 });
 };
@@ -125,14 +95,16 @@ $.ajax({
   dataType: "script",
   success: function() {
 	$("#record").text('Registra');
-	Stop();
-	Reset();  
+	chronoStart();
+//	chronoReset();  
     //alert("success");
  //   console.log();
   },
   error: function() {
  //   alert("error");
-    $("#record").css("background-color","white").text('Registra');   
+    $("#record").css("background-color","white").text('Registra');
+ //   chronoStart();
+	chronoStopReset();    
   }
 });
 };
@@ -427,8 +399,9 @@ $('#stream').on('click', function() {
     var  resy = $("#resy").val();
     var  audio_b = $("#audio_bitrate").val();
     var  video_b = $("#video_bitrate").val();
-    $("#st_info").text( resx + "x" + resy + " V: " + video_b + "Kbps A: " + audio_b + "Kbps" );
-	console.log(resx + "x" + resy + " V: " + video_b + "Kbps A: " + audio_b + "Kbps" );
+    var tot_b = Number(video_b) + Number(audio_b);
+    $("#st_info").text( resx + "x" + resy + " " + tot_b + "Kbps" );
+//	console.log(resx + "x" + resy + " V: " + video_b + "Kbps A: " + audio_b + "Kbps" );
 }); 
 });
  
