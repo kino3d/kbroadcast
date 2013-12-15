@@ -21,7 +21,9 @@ foreach ($resultlist as $fileName)
   	if(strtolower(substr($fileName, 0,5)) == 'total') {
   		     echo "<li id=\"video-$i\" class=\"rows\">" . ucfirst($fileName) . "</li>";
   		} else {
-     echo "<li id=\"video-$i\" class=\"rows\"><span class=\"glyphicon glyphicon-film\" style=\"display: inline-block;margin-right:4px;\"></span><a href=# class=\"fzilectrl\">$fileName</a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-trash\"></span></a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-download\"></span></a><a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-eye-open\"></span></a></li>";
+  			$fileSize = split(" ", $fileName);
+  		//	echo $fileSize[0];
+     echo "<li id=\"video-$i\" class=\"rows fade in\"><span class=\"glyphicon glyphicon-film\" style=\"display: inline-block;margin-right:4px;\"></span>$fileSize[0] <a href=# class=\"fzilectrl\">$fileSize[1]</a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-trash\"></span></a> <a href=\"download.php?media=$fileSize[1]\" class=\"filectrl\"><span class=\"glyphicon glyphicon-download\"></span></a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-eye-open\"></span></a></li>";
     $i++;
    }
    }
@@ -44,6 +46,9 @@ foreach ($resultlistmedia as $fileNamemedia)
    }
    }
 };
+break;
+case 'del':
+
 break;
 }
 

@@ -209,7 +209,7 @@ $.ajax({
   url: "update-rec.php?media=rec",
   dataType: "html",
   success: function(data) {
-	$("#listfile").html(data).fade();  
+	$("#listfile").html(data);  
  //	alert(resultlist);
   //	console.log(data)
 	}});
