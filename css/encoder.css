@@ -193,7 +193,7 @@ display: inline;
 .filectrl{
 float:right;
 border-left:1px solid #dfdfdf;
-border-right:1px solid #dfdfdf;
+// border-right:1px solid #dfdfdf;
 padding-left:3px;	
 padding-right:3px;
 background-color: #fff;
