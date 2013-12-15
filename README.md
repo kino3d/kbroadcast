@@ -1,4 +1,4 @@
-# T-encoder
+## T-encoder ##
 Blacmagick SD/HD streaming encoder web interface
 
 Requirements
@@ -11,6 +11,6 @@ Requirements
 - gstreamer0.10 all plugins (not now).
 - gstd git version (not now).
 
-- Read [system](https://bitbucket.org/yaki/t-broadcaster/src/e59ef2887cdc/system/?at=master) to Linux setup
+- Read [system] to Linux setup
 
 kino  
