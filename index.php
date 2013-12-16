@@ -214,13 +214,17 @@ if(sizeof($ffmpeg_output) == null ) {
 		});
 </script>
 				<hr>
-				<div class="form-group input-group input-group-sm col-xs-6" style="">
+				<div class="form-group input-group input-group-sm col-sm-6" style="">
 				<span class="input-group-addon input-group-sm" style=""><small>X:</small></span> 
-					<input type="text" id="if_resx" class="form-control  input-sm" value="X" style="" />
+					<input type="text" id="if_resx" class="form-control  input-sm" placeholder="risoluzione X" style="" />
 					<span class="input-group-addon" style=""><small>Y:</small></span>
-					<input type="text" id="if_resy" class="form-control  input-sm" value="Y" style="" />
+					<input type="text" id="if_resy" class="form-control  input-sm" placeholder="risoluzione Y" style="" />
+					
 				</div>
-				<textarea class="form-control input-sm small" rows="3"></textarea>
+				
+					<button type="submit" id="iframe_code" class="btn btn-sm btn-success ifcode">Genera codice</button>
+					<div class="clearfix"></div>
+				<textarea id="iframe_remote" class="form-control input-sm" rows="3" placeholder="Premi 'Genera Codice', copia e incolla il codice in una pagina del tuo sito"></textarea>
 			</div>
 			<div class="tab-pane panel-body" id="Tab3">
       <!-- Begin page  Media content -->

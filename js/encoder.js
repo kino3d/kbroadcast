@@ -218,8 +218,6 @@ $.ajax({
 	}});
 });
 
-
-
 $(function(){
 $.ajax({
  type: "GET",
@@ -431,3 +429,15 @@ $('#stream').on('click', function() {
 }); 
 });
  
+$(function(){
+$('#iframe_code').button().click(function(){
+	var iframe_x = $("#if_resx").val();
+	var iframe_y = $("#if_resy").val();
+	var rtmp_url = $("#s_rtmp").val(); 
+	$("#iframe_remote").text('<iframe src=\"http://live.top-ix.org/player/iframe.php?name=\" frameborder=\"0\" width=\"' + iframe_x +'\" width=\"'+ iframe_y + '\" ></iframe>');
+	console.log("ecco!");
+});
+});
+
+
+
