@@ -71,7 +71,6 @@ if(sizeof($ffmpeg_output) == null ) {
 <div class="tabbable navbar" role="navigation">
      		<ul id="tab" class="nav nav-tabs ">
      			<li class="active"><a href="#Tab1" data-toggle="tab" >Encoder</a></li>
-     			<li><a href="#Tab2" data-toggle="tab">Player</a></li>
      			<li><a href="#Tab3" data-toggle="tab">Media</a></li>
      			<li><a href="#Tab4" data-toggle="tab">Sistema</a></li>
      			<small class="pull-right" style="border-bottom:1px solid #dfdfdf"><span id="connected" class="connected text-right text-danger">Offline</span></small>
@@ -180,52 +179,23 @@ if(sizeof($ffmpeg_output) == null ) {
 					</div>
 					</form>			
 					</div>
+
+				<div class="panel-heading"><strong>Player</strong></div>
+					<div class="panel-body">
+					<hr>
+						<div class="form-group input-group input-group-sm col-xs-7" style="">
+						<span class="input-group-addon input-group-sm" style=""><small>Risoluzione</small></span> 
+						<span class="input-group-addon input-group-sm" style=""><small>X:</small></span> 
+						<input type="text" id="if_resx" class="form-control  input-sm" placeholder="risoluzione X" style="" />
+						<span class="input-group-addon" style=""><small>Y:</small></span>
+						<input type="text" id="if_resy" class="form-control  input-sm" placeholder="risoluzione Y" style="" />
+						</div>
+						<button type="submit" id="iframe_code" class="btn btn-sm btn-success">Genera codice</button>
+						<div class="clearfix"></div>
+						<textarea id="iframe_remote" class="form-control input-sm" rows="3" placeholder="Premi 'Genera Codice', copia e incolla il codice in una pagina del tuo sito"></textarea>
 					</div>
-      		</div>
-  			<div class="tab-pane panel-body" id="Tab2">
-      <!-- Begin page  Player content -->
-      		<div id="preview"></div>
-        	 <script type='text/javascript'>
-	jwplayer('preview').setup({
-		modes: [
-		{type:"flash", src:"http://live.top-ix.org/player/jw/player.swf"},
-		{ type:"html5", config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8', provider:'video"}}
-					],
-		file: 'stream',
-		'width': '500',
-		'height': '282',
-		aspectratio: '16:9',
-	/*  'image':'../plug-small1-70.png', */
-		frontcolor: 'ffffff',
-		lightcolor: 'cc9900',
-		screencolor: '000000',
-		backcolor:'434343',
-		provider:'rtmp',
-		streamer:"rtmp://<?php echo $hostname;?>/myapp",
-		autostart: 'true',
-		stretching: 'fit',
-		controlbar: 'hide',
-		backgroundcolor: '000000',
-		icons:'true',
-		controls:'false',
-	//	"plugins": {
-		// "gapro-2": {}
-//	}
-		});
-</script>
-				<hr>
-				<div class="form-group input-group input-group-sm col-sm-6" style="">
-				<span class="input-group-addon input-group-sm" style=""><small>X:</small></span> 
-					<input type="text" id="if_resx" class="form-control  input-sm" placeholder="risoluzione X" style="" />
-					<span class="input-group-addon" style=""><small>Y:</small></span>
-					<input type="text" id="if_resy" class="form-control  input-sm" placeholder="risoluzione Y" style="" />
-					
-				</div>
-				
-					<button type="submit" id="iframe_code" class="btn btn-sm btn-success ifcode">Genera codice</button>
-					<div class="clearfix"></div>
-				<textarea id="iframe_remote" class="form-control input-sm" rows="3" placeholder="Premi 'Genera Codice', copia e incolla il codice in una pagina del tuo sito"></textarea>
 			</div>
+      		</div>
 			<div class="tab-pane panel-body" id="Tab3">
       <!-- Begin page  Media content -->
       			<div class="panel panel-default">
