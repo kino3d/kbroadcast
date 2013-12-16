@@ -166,25 +166,24 @@ if(sizeof($ffmpeg_output) == null ) {
 				<!--	<div style="margin:5px;padding:0px;font-weight:bold;border-bottom:1px solid #dfdfdf;width:300px;">
 					<small >Stream info: <span id="st_info"></span></small>					
 					</div> -->					
-					<div class="btn-group pull-right">
-					<button id="stream" class="btn btn-sm btn-success">Start</button>
-					</div>
-					
+					 <div class="btn-group pull-right">
+					<button id="stream" class="btn btn-sm btn-success"><span class=" glyphicon glyphicon-play"></span> Avvia streaming</button>
+					</div> 
 				<!--	</form> -->
 				<!--	<div class="clearfix"></div> -->
-					<form name="chronoForm">
-					<div id="radio" class="btn-group pull-left" data-toggle="buttons">
-					<button class="btn btn-default btn-xs" name="startstop" id="record" style="witdh:50px;" value="Registra" data-toggle="button">Registra</button>
-					<button class="btn btn-default btn-xs" id="chronotime">0:00:00</button>
+				<!--	<form name="chronoForm"> -->
+					 <div id="radio" class="btn-group pull-right">
+					<button class="btn btn-danger btn-sm" name="startstop" id="record" style="witdh:50px;" value="Registra"><span class="glyphicon glyphicon-record"></span> Registra</button>&nbsp;
+				<!--	<button class="btn btn-default btn-xs" id="chronotime">0:00:00</button> -->
 					</div>
-					</form>			
+				<!--	</form> -->			
 					</div>
 
 				<div class="panel-heading"><strong>Player</strong></div>
 					<div class="panel-body">
 					<hr>
-						<div class="form-group input-group input-group-sm col-xs-7" style="">
-						<span class="input-group-addon input-group-sm" style=""><small>Risoluzione</small></span> 
+						<div class="form-group input-group input-group-sm col-xs-9" style="">
+						<span class="input-group-addon input-group-sm" style=""><small>Dimensione</small></span> 
 						<span class="input-group-addon input-group-sm" style=""><small>X:</small></span> 
 						<input type="text" id="if_resx" class="form-control  input-sm" placeholder="risoluzione X" style="" />
 						<span class="input-group-addon" style=""><small>Y:</small></span>
@@ -192,7 +191,7 @@ if(sizeof($ffmpeg_output) == null ) {
 						</div>
 						<button type="submit" id="iframe_code" class="btn btn-sm btn-success">Genera codice</button>
 						<div class="clearfix"></div>
-						<textarea id="iframe_remote" class="form-control input-sm" rows="3" placeholder="Premi 'Genera Codice', copia e incolla il codice in una pagina del tuo sito"></textarea>
+						<textarea id="iframe_remote" class="form-control input-sm" rows="3" placeholder="Inserisci la dimensione del player e premi 'Genera Codice', copia e incolla il codice in una pagina del tuo sito"></textarea>
 					</div>
 			</div>
       		</div>
