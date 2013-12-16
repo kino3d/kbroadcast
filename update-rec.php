@@ -23,7 +23,7 @@ foreach ($resultlist as $fileName)
   		} else {
   			$fileSize = preg_split('/[\s,]+/', $fileName, -1,PREG_SPLIT_NO_EMPTY );
   		//	echo $fileSize[0];
-     echo "<li id=\"video-$i\" class=\"rows fade in\"><span class=\"glyphicon glyphicon-film\" style=\"display: inline-block;margin-right:4px;\"></span><span class=\"text-right\">$fileSize[0]</span> <a href=# class=\"fzilectrl\">$fileSize[1]</a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-trash\"></span></a> <a href=\"download.php?media=$fileSize[1]\" class=\"filectrl\"><span class=\"glyphicon glyphicon-download\"></span></a> <a href=# class=\"filectrl\"><span class=\"glyphicon glyphicon-eye-open\"></span></a></li>";
+     echo "<li id=\"video-$i\" class=\"rows fade in\"><span class=\"glyphicon glyphicon-film\" style=\"display: inline-block;margin-right:4px;\"></span><span class=\"text-right\">$fileSize[0]</span> <a href=# class=\"fzilectrl\">$fileSize[1]</a> <a id=\"delete\" href=\"#\" name=\"$fileSize[1]\" class=\"filectrl\"><span class=\"glyphicon glyphicon-trash\"></span></a> <a href=\"download.php?media=$fileSize[1]\" class=\"filectrl\"><span class=\"glyphicon glyphicon-download\"></span></a> <a href=\"#\" class=\"filectrl\"><span class=\"glyphicon glyphicon-eye-open\"></span></a></li>";
     $i++;
    }
    }
@@ -48,8 +48,12 @@ foreach ($resultlistmedia as $fileNamemedia)
 };
 break;
 case 'del':
+$filetodel = $_GET["name"];
+unlink("/var/www/encoder/recording/$filetodel");
 
 break;
 }
+
+
 
 ?>

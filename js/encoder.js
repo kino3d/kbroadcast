@@ -188,7 +188,8 @@ $.ajax({
 // },3000);
 };
 
-$('#refresh').button().click(function(){
+$('#refresh').button().click(function(e){
+	e.preventDefault();
 $.ajax({
   type: "GET",
   url: "update-rec.php?media=rec",
@@ -200,6 +201,24 @@ $.ajax({
 })
 })
 });
+
+// Delete files from recording
+
+$('#delete').button().click(function(e){
+	e.preventDefault();
+	var delname = $(this).prop('name');
+	console.log(delname);
+$.ajax({
+  type: "GET",
+  url: "update-rec.php?media=del&name=". delname ,
+  dataType: "html",
+  success: function(data) {
+	$("#listfile").html(data);
+	$('#refresh').button('reset');  
+	}});
+});
+
+
 
 $(function(){
 $.ajax({
