@@ -104,7 +104,7 @@ if(sizeof($ffmpeg_output) == null ) {
 	/*  'image':'../plug-small1-70.png', */
 		frontcolor: 'ffffff',
 		lightcolor: 'cc9900',
-		screencolor: 'ffffff',
+		screencolor: '000000',
 		backcolor:'434343',
 		provider:'rtmp',
 		streamer:"rtmp://<?php echo $hostname;?>/myapp",
@@ -184,7 +184,43 @@ if(sizeof($ffmpeg_output) == null ) {
       		</div>
   			<div class="tab-pane panel-body" id="Tab2">
       <!-- Begin page  Player content -->
-        	<p class="">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within </p>
+      		<div id="preview"></div>
+        	 <script type='text/javascript'>
+	jwplayer('preview').setup({
+		modes: [
+		{type:"flash", src:"http://live.top-ix.org/player/jw/player.swf"},
+		{ type:"html5", config: {file:"http://<?php echo $hostname;?>/mobile/stream.m3u8', provider:'video"}}
+					],
+		file: 'stream',
+		'width': '500',
+		'height': '282',
+		aspectratio: '16:9',
+	/*  'image':'../plug-small1-70.png', */
+		frontcolor: 'ffffff',
+		lightcolor: 'cc9900',
+		screencolor: '000000',
+		backcolor:'434343',
+		provider:'rtmp',
+		streamer:"rtmp://<?php echo $hostname;?>/myapp",
+		autostart: 'true',
+		stretching: 'fit',
+		controlbar: 'hide',
+		backgroundcolor: '000000',
+		icons:'true',
+		controls:'false',
+	//	"plugins": {
+		// "gapro-2": {}
+//	}
+		});
+</script>
+				<hr>
+				<div class="form-group input-group input-group-sm col-xs-6" style="">
+				<span class="input-group-addon input-group-sm" style=""><small>X:</small></span> 
+					<input type="text" id="if_resx" class="form-control  input-sm" value="X" style="" />
+					<span class="input-group-addon" style=""><small>Y:</small></span>
+					<input type="text" id="if_resy" class="form-control  input-sm" value="Y" style="" />
+				</div>
+				<textarea class="form-control input-sm small" rows="3"></textarea>
 			</div>
 			<div class="tab-pane panel-body" id="Tab3">
       <!-- Begin page  Media content -->
