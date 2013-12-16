@@ -183,17 +183,16 @@ if(sizeof($ffmpeg_output) == null ) {
 					</div>
       		</div>
   			<div class="tab-pane panel-body" id="Tab2">
-      <!-- Begin page content -->
+      <!-- Begin page  Player content -->
         	<p class="">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within </p>
 			</div>
 			<div class="tab-pane panel-body" id="Tab3">
-      <!-- Begin page content -->
-      <!-- <button id="aggiorna"></button> -->
-				<div class="panel panel-default">
-				<div class="panel-heading">
-				<strong>Registrazioni</strong>
-				</div>
- 					 <div class="panel-body">
+      <!-- Begin page  Media content -->
+      			<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong>Registrazioni</strong>
+						</div>
+ 					<div class="panel-body">
  					 	<button type="button" id="refresh" class="btn navbar-btn btn-sm btn-success pull-right">Aggiorna <span class="glyphicon glyphicon-refresh text-success"></span></button>
  					 	<div class="clearfix"></div>
 							<div id="listfile" class="filem">
@@ -203,7 +202,7 @@ if(sizeof($ffmpeg_output) == null ) {
 							</div>
 						</div>
 				</div>
-					<div class="panel panel-default">
+			<!--		<div class="panel panel-default">
 				<div class="panel-heading"><strong>USB Storage</strong></div>
  					 <div class="panel-body">
 							<div id="listfile" class="filem ui-corner-all">
@@ -212,7 +211,7 @@ if(sizeof($ffmpeg_output) == null ) {
 								</ul>
 							</div>
 						</div>
-				</div>
+				</div> -->
       		</div>
      <div class="tab-pane panel-body" id="Tab4">
 		<div class="panel-group" id="accordion">
