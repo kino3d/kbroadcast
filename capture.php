@@ -8,7 +8,7 @@ bmdcapture -m 10 -V 3 -A 2 -F nut -f pipe:1 | avconv -re -i - -c:v libx264 -prof
 
 */
 $hostname = gethostbyaddr($_SERVER['SERVER_ADDR']);
-// echo $hostname;
+echo $hostname;
 
 
  if($_GET == null){
@@ -40,7 +40,7 @@ switch($encoder) {
 		$mode = 10;
 		$vmode = 3 ;
 		$amode = 0;
-		$cmd = "bmdcapture -m ". $mode ." -V " . $vmode . " -A ". $amode ." -F nut -f pipe:1 | avconv -re -i - -c:v libx264 -profile:v baseline -preset medium -level 30 -aspect 16:9 -s 1280x720 -b:v 3500 -r 25 -g 48 -keyint_min 48 -sc_threshold 0 -c:a libvo_aacenc -ab 48k -ar 48000 -ac 2 -tune zerolatency -f flv rtmp://".$hostname.":1935/myapp/stream >/dev/null 2>/dev/null & echo $!";
+		$cmd = "bmdcapture -m ". $mode ." -V " . $vmode . " -A ". $amode ." -F nut -f pipe:1 | avconv -re -i - -c:v libx264 -profile:v baseline -preset medium -level 30 -aspect 16:9 -s 1280x720 -b:v 2500 -r 25 -g 48 -keyint_min 48 -sc_threshold 0 -c:a libvo_aacenc -ab 32k -ar 48000 -ac 2 -tune zerolatency -f flv rtmp://" . $hostname . ":1935/myapp/stream >/dev/null 2>/dev/null & echo $!";
 
 		exec($cmd,$pidArr);
 

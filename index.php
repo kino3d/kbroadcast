@@ -159,29 +159,36 @@ if(sizeof($ffmpeg_output) == null ) {
 					<span class="input-group-addon" style="height: 20px; padding: 0 4px; margin: 0;">Bitrate:</span>
 					<input type="text" id="audio_bitrate" class="form-control input-sm" value="audio_b" style="height: 22px; padding: 0 5px; margin: 0;" />
 						
-					</div>
-					<span class="label label-success pull-left col-xs-4" style="width:189px;margin:1px 0px;padding:5px;font-weight:bold;text-align:left;" >Stream info: <span id="st_info"></span></span>
-					<div class="clearfix"></div>
-					<hr>
+				<!--	</div> -->
+				<!--	<span class="label label-success pull-left col-xs-4" style="width:189px;margin:1px 0px;padding:5px;font-weight:bold;text-align:left;" >Stream info: <span id="st_info"></span></span> -->
+				<!--	<div class="clearfix"></div> -->
+					
 				<!--	<div style="margin:5px;padding:0px;font-weight:bold;border-bottom:1px solid #dfdfdf;width:300px;">
 					<small >Stream info: <span id="st_info"></span></small>					
-					</div> -->					
+					</div> -->
+					</div>
+					
+					<div class="clearfix"></div>  
+					<hr>
+                                         <div class="btn-group pull-left">
+                                        <span class="label label-success pull-left col-xs-4" style="width:220px;margin:1px 0px;padding:5px;font-weight:bold;text-align:left;" >Stream info: <span id="st_info"></span></span>
+                                        </div>
+                                        <!--    <div class="clearfix"></div> -->
 					 <div class="btn-group pull-right">
 					<button id="stream" class="btn btn-sm btn-success"><span class=" glyphicon glyphicon-play"></span> Avvia streaming</button>
 					</div> 
 				<!--	</form> -->
 				<!--	<div class="clearfix"></div> -->
-				<!--	<form name="chronoForm"> -->
+					<form name="chronoForm">
 					 <div id="radio" class="btn-group pull-right">
-					<button class="btn btn-danger btn-sm" name="startstop" id="record" style="witdh:50px;" value="Registra"><span class="glyphicon glyphicon-record"></span> Registra</button>&nbsp;
-				<!--	<button class="btn btn-default btn-xs" id="chronotime">0:00:00</button> -->
+					<button class="btn btn-danger btn-sm" name="startstop" id="record" style="witdh:50px;" value="Registra">Registra</button>&nbsp;
+					<button class="btn btn-default btn-xs" id="chronotime">0:00:00</button>
 					</div>
-				<!--	</form> -->			
+					</form>			
 					</div>
 
 				<div class="panel-heading"><strong>Player</strong></div>
 					<div class="panel-body">
-					<hr>
 						<div class="form-group input-group input-group-sm col-xs-9" style="">
 						<span class="input-group-addon input-group-sm" style=""><small>Dimensione</small></span> 
 						<span class="input-group-addon input-group-sm" style=""><small>X:</small></span> 

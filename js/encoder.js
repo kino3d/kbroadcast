@@ -69,7 +69,7 @@ event.preventDefault();
 
 
 $(function() {
-$( "#record" ).button().click(function() {
+$("#record").button().click(function() {
 if ( $("#record").text() === "Registra" ) {
 $.ajax({
   type: "GET",
@@ -96,6 +96,7 @@ $.ajax({
   success: function() {
 	$("#record").text('Registra');
 	chronoStart();
+	chronoStopReset();
 //	chronoReset();  
     //alert("success");
  //   console.log();
@@ -261,7 +262,7 @@ $.ajax({
 	$("#pbar").addClass("progress-bar-danger").removeClass("progress-bar-success");	
 	}
 	else
-	{  $("#av_status").text("Cattura: 1920x108050i 25fps 3500kbps");
+	{  $("#av_status").text("Cattura: 1920x108050i 25fps 2500kbps");
 		$("#pbar").addClass("progress-bar-success").removeClass("progress-bar-danger");	
 	}
 	//jwplayer().play();   
