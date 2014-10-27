@@ -15,16 +15,18 @@ $media = $_GET["media"];
 
 switch($media) {
     case 'rec':
-$resultlist = null;
+    $resultlist = null;
+    $freespace = null;
 $i=0;
 $dir = '/var/www/encoder/recording/';
-exec('ls -sht /var/www/encoder/recording/' ,$resultlist );
+exec('ls -sht /var/www/encoder/recording/' , $resultlist);
+exec('df -h | grep /dev/sda2 | cut -c 28-35', $freespace);
 
 foreach ($resultlist as $fileName)
 {
   if (strtolower(substr($fileName, -3)) != '.md') {
       if(strtolower(substr($fileName, 0,5)) == 'total') {
-               echo "<li id=\"video-$i\" class=\"rows\">" . ucfirst($fileName) . "</li>";
+               echo "<li id=\"video-$i\" class=\"rows\">" . ucfirst($fileName) . " Free:." . $freespace[0] ."</li>";
           } else {
               $fileSize = preg_split('/[\s,]+/', $fileName, -1,PREG_SPLIT_NO_EMPTY );
 
