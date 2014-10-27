@@ -231,17 +231,24 @@ $(function () {
 
  $(function () {
     $(".view").click(function () {
-        var viewname = $(this).prop('name');
-        var viewname = "rtmp://194.116.126.10/vod/" + viewname;
-        $("#fileview2").html(viewname);
+        var viewname1 = $(this).prop('name');
+        var viewname = "rtmp://194.116.126.10/vod/" + viewname1;
+        $("#fileview2").html(viewname1);
         $("#fileview").prop('src',viewname);
         $(".bs-viewfile-modal-sm").modal({
             show: true,
             keyboard: true,
             backdrop: false
         });
+        var mediaelementplayer = $('#player2').mediaelementplayer({success: function(mediaElement, domElement) {
+        // now that the player is ready you can call methods on it
+            mediaelementplayer.setCurrentTime(50);
+            mediaelementplayer.setSrc(viewname);
+            mediaelementplayer.load(); // this is a required HTML5 convention
+            mediaelementplayer.play();
+        }});
     });
-});
+ });
 
 
 

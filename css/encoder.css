@@ -116,6 +116,16 @@ code {
     margin-top:134px;
 }
 
+
+.bs-viewfile-modal-sm .modal-sm {
+    max-width: 500px;
+    margin-top:30px;
+}
+
+.bs-viewfile-modal-sm .mejs-container .mejs-controls {
+    max-width: 100%;
+}
+
 .st_info .alert {
 
 

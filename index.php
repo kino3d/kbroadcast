@@ -70,7 +70,7 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                                              </select>
                                         </div>
                                         <div class="btn-group form-group">
-                                            <button type="button" id="str_status" class="btn btn-default btn-xs src_stats">Start video</button>
+                                            <button type="button" id="str_status" class="btn btn-info btn-xs src_stats">Start video</button>
                                         </div>
 
                                          <div class="form-group pull-right">
@@ -197,26 +197,31 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                             </div>
                         </div>
                         <div class="modal bs-viewfile-modal-sm" tabindex="-1" role="dialog" aria-labelledby="viewmediafile" aria-hidden="true">
-                        <div class="modal-dialog modal-sm" style="width:300px;">
+                        <div class="modal-dialog modal-sm">
                             <div class="modal-content text-center">
+                               <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                               <h5 class="modal-title"><span id="fileview2"></span</h5>
+                               </div>
+
                                 <div class="modal-body">
-                                    <!--    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
-                                    <span id="fileview2"></span>
+
+                                <!--    <span id="fileview2"></span> -->
                                     <video style="max-width:100%;max-height:100%;" id="player2" preload="none" controls="controls" autoplay="true">
                                 <!-- Pseudo HTML5 -->
                                        <!-- <source type="video/rtmp" src="rtmp://<?php echo $hostname;?>/myapp/stream" /> -->
-                                        <source type="video/mp4" id="fileview" src="" />
+                                        <source type="video/rtmp" id="fileview" src="#" />
 
                                     </video>
-                                    <script>
+                 <!--      <script>
                             $('#player2').mediaelementplayer({
                                 mode: 'auto_plugin',
-                                enableAutosize: true,
-                                //   plugins: [ 'flash', 'silverlight'],
+                                enableAutosize: false,
+                                   plugins: [ 'flash', 'silverlight'],
                                 features: ['playpause', 'volume', 'fullscreen'],
                                 //    autosizeProgress : false
                             });
-                        </script>
+                        </script> -->
                                 </div>
                             </div>
                         </div>
