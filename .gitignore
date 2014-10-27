@@ -1,4 +1,3 @@
-
 *.php~
 *.html~
 *.sh~
@@ -6,3 +5,4 @@
 *.flv
 *.mp4
 jquery-ui-1.10.2.custom
+/.brackets.json

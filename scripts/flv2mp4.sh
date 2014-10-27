@@ -26,7 +26,8 @@ fi
 echo "Input: $input"
 echo "Output: $output"
                          
-avconv -y -i $input -vcodec copy -acodec copy -f flv $output
+avconv -y -i $input -movflags faststart -vcodec copy -acodec copy $output
+#avconv -y -i $input -vcodec libx264 -vprofile main -level 3.0 -vb 2000k -acodec libaac -ab 128k $output
                                        
 if [ "$remove_origin" = "TRUE" ]; then
 rm -f $input
