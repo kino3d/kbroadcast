@@ -70,7 +70,7 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                                              </select>
                                         </div>
                                         <div class="btn-group form-group">
-                                            <button type="button" id="str_status" class="btn btn-default btn-xs" class="src_stats">Start video</button>
+                                            <button type="button" id="str_status" class="btn btn-default btn-xs src_stats">Start video</button>
                                         </div>
 
                                          <div class="form-group pull-right">

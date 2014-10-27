@@ -196,7 +196,7 @@ $(function () {
  $(function () {
     $(".del").click(function () {
         $("#filedel").html($(this).prop('name'));
-        $("#filedel").prop('name',$(this).prop('name'));
+        $("#filedel").prop('name', $(this).prop('name'));
         $(".bs-delfile-modal-sm").modal({
             show: true,
             keyboard: true,
@@ -232,7 +232,7 @@ $(function () {
  $(function () {
     $(".view").click(function () {
         var viewname = $(this).prop('name');
-        var viewname = "http://194.116.126.10/vod_http/" + viewname;
+        var viewname = "rtmp://194.116.126.10/vod/" + viewname;
         $("#fileview2").html(viewname);
         $("#fileview").prop('src',viewname);
         $(".bs-viewfile-modal-sm").modal({
@@ -248,6 +248,7 @@ $(function () {
 // start capture
 
 $(function () {
+    $(".src_stats").click(function (){
     $.ajax({
         type: "GET",
         url: "capture.php",
@@ -276,7 +277,7 @@ $(function () {
         }
     });
 });
-
+});
 
 setInterval(function () {
     $.ajax({
@@ -286,7 +287,7 @@ setInterval(function () {
         // contentType: "application/json; charset=utf-8",
         //  data: data,
         success: function (data) {
-            if (data === "stopped") {
+            if (data == "stopped") {
                 $("#av_status").text("stopped");
                 $("#pbar").addClass("progress-bar-danger").removeClass("progress-bar-success");
             } else {
