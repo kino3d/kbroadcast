@@ -1,13 +1,13 @@
-## T-encoder ##
-Blacmagick SD/HD streaming encoder web interface
+## kebroadcast ##
+generic streaming encoder web interface
 
 Requirements
 ------------
-- Ubuntu 14.04.
+- Linux OS Ubuntu/Raspian etc...
 - [nginx + nginx-rtmp module git version](http://nginx.org) with php5.
 - twitter bootstrap + jquery.
 - [libav git version](http://libav.org).
-- bmdtools [lu_zero](http://github.org).
+- bmdtools [lu_zero](http://github.org). (optional only if you use a blachmagic card)
 - gstreamer0.10 all plugins (not now).
 - gstd git version (not now).
 
