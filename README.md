@@ -1,4 +1,4 @@
-## kebroadcast ##
+## kbroadcast ##
 generic streaming encoder web interface
 
 Requirements
