@@ -27,7 +27,14 @@
 -  ./configure --prefix=/usr --with-http_ssl_module --add-module=../nginx-rtmp-module --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --pid-path=/run/nginx.pid --error-log-path=/var/log/nginx/error.log --with-http_stub_status_module
 
 # libav
-Depending of your distro you can search for the libav/ffmpeg package
+Depending of your distro you can search for the libav/ffmpeg package if you plan to use a blackmagick card 
+you must compile and install https://github.com/lu-zero/bmdtools
+
+- Compiling X264
+- git clone git clone http://git.videolan.org/git/x264.git
+- cd x264
+- ./configure --enable-static
+- make && make install
 
 - Compiling libav
 - git clone https://github.com/libav/libav.git
