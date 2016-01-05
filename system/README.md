@@ -31,7 +31,7 @@ Depending of your distro you can search for the libav/ffmpeg package if you plan
 you must compile and install https://github.com/lu-zero/bmdtools
 
 - Compiling X264
-- git clone git clone http://git.videolan.org/git/x264.git
+- git clone http://git.videolan.org/git/x264.git
 - cd x264
 - ./configure --enable-static
 - make && make install
