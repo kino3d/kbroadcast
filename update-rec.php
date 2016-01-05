@@ -1,7 +1,5 @@
-  <script src="js/encoder.js" type="text/javascript"></script>
+<script src="js/encoder.js" type="text/javascript"></script>
 <script>
-
-
 </script>
 <?php
 
@@ -64,20 +62,20 @@ break;
 
 ?>
 
-                     <div class="modal bs-delfile-modal-sm" tabindex="-1" role="dialog" aria-labelledby="delmediafile" aria-hidden="true">
-                        <div class="modal-dialog modal-sm" style="width:300px;">
-                            <div class="modal-content text-center">
-                                <div class="modal-body">
-                                    <!--    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
-                                    <span class="text-alert">Eliminare il file:</span>
-                                    <h5><strong><span id="filedel"></span></strong></h5>
-                                        <div class="btn-group btn-group-sm">
-                                          <button id="okdel" class="btn btn-danger" width="50px" type="button">Si</button>
-                                        </div>
-                                        <div class="btn-group btn-group-sm">
-                                          <button type="button" class="btn btn-success" width="50px" data-dismiss="modal">No</button>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="modal bs-delfile-modal-sm" tabindex="-1" role="dialog" aria-labelledby="delmediafile" aria-hidden="true">
+        <div class="modal-dialog modal-sm" style="width:300px;">
+            <div class="modal-content text-center">
+                <div class="modal-body">
+                    <!--    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+                    <span class="text-alert">Eliminare il file:</span>
+                    <h5><strong><span id="filedel"></span></strong></h5>
+                    <div class="btn-group btn-group-sm">
+                        <button id="okdel" class="btn btn-danger" width="50px" type="button">Si</button>
                     </div>
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-success" width="50px" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

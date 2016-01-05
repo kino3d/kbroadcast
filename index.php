@@ -1,8 +1,4 @@
-<?php header( 'Access-Control-Allow-Origin: *');
-/* Network stuff */
-$hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
-/* echo $hostname; */
-?>
+<?php header( 'Access-Control-Allow-Origin: *'); /* Network stuff */ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']); /* echo $hostname; */ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +23,7 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
     <link rel="stylesheet" href="js/medialement/mediaelementplayer.min.css" />
     <link rel="stylesheet" href="js/font-awesome/css/font-awesome.min.css">
 </head>
+
 <body>
     <!-- Wrap all page content here -->
     <div class="wrap">
@@ -46,49 +43,49 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                         <!-- Begin page content -->
                         <div class="well well-sm">
                             <form id="source" class="form-inline">
-                                        <div id="radio1" class="btn-group form-group" data-toggle="buttons">
-                                             <label class="btn btn-primary btn-xs" style="width:45px;" >
-                                             <input class="form-control input-sm" type="radio" value="1" name="radio1" id="checks1">HDMI</label>
-                                             <label class="btn btn-primary btn-xs"  style="width:45px;margin-right:5px;">
-                                             <input class="form-control input-sm" type="radio" value="0" name="radio1" id="checks2" >SDI</label>
-                                         </div>
-                                        <div class="form-group" style="width:150px;">
-                                             <select id="select" class="form-control input-sm pull-left" style="padding:0px;margin:0;height:23px;margin-right:5px;margin-top:-1px;">
-                                             <option value="2">PAL 576i 25FPS</option>
-                                             <!--    <option value="3">NTSC Progressive 720x486 59.9401FPS</option> -->
-                                             <option value="4">PAL 576p 50FPS</option>
-                                             <option value="5">HD 1080p 23.976FPS</option>
-                                             <option value="6">HD 1080p 24FPS</option>
-                                             <option value="7">HD 1080p 25FPS</option>
-                                             <option value="8">HD 1080p 29.97FPS</option>
-                                             <option value="9">HD 1080p 30FPS</option>
-                                             <option value="10" selected="selected">HD 1080i 25FPS</option>
-                                             <option value="12">HD 1080i 30FPS</option>
-                                             <option value="13">HD 720p 50FPS</option>
-                                             <option value="14">HD 720p 59.9401FPS</option>
-                                             <option value="15">HD 720p 60FPS</option>
-                                             </select>
-                                        </div>
-                                        <div class="btn-group form-group">
-                                            <button type="button" id="str_status" class="btn btn-info btn-xs src_stats">Start video</button>
-                                        </div>
+                                <div id="radio1" class="btn-group form-group" data-toggle="buttons">
+                                    <label class="btn btn-primary btn-xs" style="width:45px;">
+                                        <input class="form-control input-sm" type="radio" value="1" name="radio1" id="checks1">HDMI</label>
+                                    <label class="btn btn-primary btn-xs" style="width:45px;margin-right:5px;">
+                                        <input class="form-control input-sm" type="radio" value="0" name="radio1" id="checks2">SDI</label>
+                                </div>
+                                <div class="form-group" style="width:150px;">
+                                    <select id="select" class="form-control input-sm pull-left" style="padding:0px;margin:0;height:23px;margin-right:5px;margin-top:-1px;">
+                                        <option value="2">PAL 576i 25FPS</option>
+                                        <!--    <option value="3">NTSC Progressive 720x486 59.9401FPS</option> -->
+                                        <option value="4">PAL 576p 50FPS</option>
+                                        <option value="5">HD 1080p 23.976FPS</option>
+                                        <option value="6">HD 1080p 24FPS</option>
+                                        <option value="7">HD 1080p 25FPS</option>
+                                        <option value="8">HD 1080p 29.97FPS</option>
+                                        <option value="9">HD 1080p 30FPS</option>
+                                        <option value="10" selected="selected">HD 1080i 25FPS</option>
+                                        <option value="12">HD 1080i 30FPS</option>
+                                        <option value="13">HD 720p 50FPS</option>
+                                        <option value="14">HD 720p 59.9401FPS</option>
+                                        <option value="15">HD 720p 60FPS</option>
+                                    </select>
+                                </div>
+                                <div class="btn-group form-group">
+                                    <button type="button" id="str_status" class="btn btn-info btn-xs src_stats">Start video</button>
+                                </div>
 
-                                         <div class="form-group pull-right">
-                                             <div class="progress progress-striped active">
-                                                 <div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%;padding:2px;font-size:10px">
-                                                 <span id="av_status" class="av_status"> </span>
-                                                 </div>
-                                             </div>
+                                <div class="form-group pull-right">
+                                    <div class="progress progress-striped active">
+                                        <div id="pbar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%;padding:2px;font-size:10px">
+                                            <span id="av_status" class="av_status"> </span>
                                         </div>
+                                    </div>
+                                </div>
                             </form>
 
                         </div>
                         <div class="clearfix"></div>
-                            <video style="max-width:100%;max-height:100%;" id="player1" preload="none" controls="controls" autoplay="true">
-                                <!-- Pseudo HTML5 -->
-                                <source type="video/rtmp" src="rtmp://<?php echo $hostname;?>/myapp/stream" />
-                                <source type="application/x-mpegURL" src="http://<?php echo $hostname;?>/mobile/stream.m3u8" />
-                            </video>
+                        <video style="max-width:100%;max-height:100%;" id="player1" preload="none" controls="controls" autoplay="true">
+                            <!-- Pseudo HTML5 -->
+                            <source type="video/rtmp" src="rtmp://<?php echo $hostname;?>/myapp/stream" />
+                            <source type="application/x-mpegURL" src="http://<?php echo $hostname;?>/mobile/stream.m3u8" />
+                        </video>
                         <script>
                             $('video').mediaelementplayer({
                                 mode: 'auto_plugin',
@@ -160,7 +157,7 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                                 <form name="chronoForm">
                                     <div id="radio" class="btn-group pull-right">
                                         <button class="btn btn-danger btn-sm" name="startstop" id="record" style="width:100px;" value="Registra"><span class="glyphicon glyphicon-record"></span> Registra</button>&nbsp;
-                                       <!-- <button class="btn btn-default btn-sm" id="chronotime">0:00:00</button> -->
+                                        <!-- <button class="btn btn-default btn-sm" id="chronotime">0:00:00</button> -->
                                     </div>
                                 </form>
                             </div>
@@ -197,23 +194,23 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                             </div>
                         </div>
                         <div class="modal bs-viewfile-modal-sm" tabindex="-1" role="dialog" aria-labelledby="viewmediafile" aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content text-center">
-                               <div class="modal-header">
-                               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                               <h5 class="modal-title"><span id="fileview2"></span</h5>
-                               </div>
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content text-center">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h5 class="modal-title"><span id="fileview2"></span</h5>
+                                    </div>
 
-                                <div class="modal-body">
+                                    <div class="modal-body">
 
-                                <!--    <span id="fileview2"></span> -->
-                                    <video style="max-width:100%;max-height:100%;" id="player2" preload="none" controls="controls" autoplay="true">
-                                <!-- Pseudo HTML5 -->
-                                       <!-- <source type="video/rtmp" src="rtmp://<?php echo $hostname;?>/myapp/stream" /> -->
-                                        <source type="video/rtmp" id="fileview" src="#" />
+                                        <!--    <span id="fileview2"></span> -->
+                                        <video style="max-width:100%;max-height:100%;" id="player2" preload="none" controls="controls" autoplay="true">
+                                            <!-- Pseudo HTML5 -->
+                                            <!-- <source type="video/rtmp" src="rtmp://<?php echo $hostname;?>/myapp/stream" /> -->
+                                            <source type="video/rtmp" id="fileview" src="#" />
 
-                                    </video>
-                 <!--      <script>
+                                        </video>
+                                        <!--      <script>
                             $('#player2').mediaelementplayer({
                                 mode: 'auto_plugin',
                                 enableAutosize: false,
@@ -222,9 +219,9 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
                                 //    autosizeProgress : false
                             });
                         </script> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                         <!--        <div class="panel panel-default">
                 <div class="panel-heading"><strong>USB Storage</strong></div>
@@ -360,7 +357,7 @@ $hostname=gethostbyaddr($_SERVER[ 'SERVER_ADDR']);
       </div>
     </div>
 -->
-  <script src="js/encoder.js" type="text/javascript"></script>
+    <script src="js/encoder.js" type="text/javascript"></script>
 </body>
 
 </html>
