@@ -231,8 +231,8 @@ $(function () {
 
  $(function () {
     $(".view").click(function () {
-        var viewname1 = $(this).prop('name');
-        var viewname = "rtmp://194.116.126.10/vod/" + viewname1;
+//        var viewname1 = ;
+        var viewname = "rtmp://194.116.126.10/vod/" + $(this).prop('name');
         $("#fileview2").html(viewname1);
         $("#fileview").prop('src',viewname);
         $(".bs-viewfile-modal-sm").modal({

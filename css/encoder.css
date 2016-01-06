@@ -8,6 +8,8 @@ body {
     -webkit-text-size-adjust: none;
     /* The html and body elements cannot have any padding or margin. */
 }
+
+
 /* Wrapper for page content to push down footer */
 
 .wrap {
@@ -16,8 +18,10 @@ body {
     /* Negative indent footer by its height */
     margin: 0 auto 0;
     /* Pad bottom by footer height */
-    padding: 0 0 0px;
+    padding: 0 0;
 }
+
+
 /* Set the fixed height of the footer here */
 
 #footer {
@@ -54,6 +58,7 @@ code {
 
 /*  Video Player */
 
+
 /* .mejs-container .mejs-controls { visibility:hidden !important; } */
 
 .mejs-container .mejs-controls {
@@ -62,15 +67,14 @@ code {
 
 .video-container {
     width: 100%;
-     max-width:360px;
-   /* margin: auto; */
-
+    max-width: 360px;
+    /* margin: auto; */
 }
 
 .mejs-container {
-        /* max-width: 100%;*/
+    /* max-width: 100%;*/
+}
 
-      }
 
 /* dialogs */
 
@@ -113,23 +117,19 @@ code {
 
 .modal-sm {
     max-width: 450px;
-    margin-top:134px;
+    margin-top: 134px;
 }
-
 
 .bs-viewfile-modal-sm .modal-sm {
     max-width: 500px;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .bs-viewfile-modal-sm .mejs-container .mejs-controls {
     max-width: 100%;
 }
 
-.st_info .alert {
-
-
-}
+.st_info .alert {}
 
 .menu {
     position: fixed;
@@ -153,6 +153,7 @@ code {
     display: inline-block;
     font-size: 11px;
 }
+
 
 /* support: IE7 */
 
@@ -199,20 +200,20 @@ code {
     color: #fff;
     text-align: center;
     background-color: #dfdfdf;
-    width:40px;
+    width: 40px;
 }
 
 .lined {
     display: inline;
 }
 
-.form-control[type="password"]{
-    width : 50%;
+.form-control[type="password"] {
+    width: 50%;
     float: left;
 }
 
-button .askpass{
-    width : 25%;
+button .askpass {
+    width: 25%;
     float: left;
     margin-left: 10px;
 }
@@ -230,10 +231,10 @@ button .askpass{
 }
 
 .pad-small {
-    line-height: 0px;
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
+    line-height:0;
+    border:0;
+    margin:0;
+    padding: 0;
     font-size: 1px;
     height: 3px;
 }
